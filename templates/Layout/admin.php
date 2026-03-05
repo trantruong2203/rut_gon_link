@@ -147,6 +147,7 @@
                                 <li><a href="<?php echo $this->Url->build(array('controller' => 'Campaigns', 'action' => 'createBanner')); ?>"><?= __('Create Banner Campaign') ?></a></li>
                                 <li><a href="<?php echo $this->Url->build(array('controller' => 'Campaigns', 'action' => 'createPopup')); ?>"><?= __('Create Popup Campaign') ?></a></li>
                                 <li><a href="<?php echo $this->Url->build(array('controller' => 'KeywordTasks', 'action' => 'index')); ?>"><?= __('Keyword Tasks') ?></a></li>
+                                <li><a href="<?php echo $this->Url->build(array('controller' => 'KeywordSeo', 'action' => 'index')); ?>"><?= __('SEO Ads') ?></a></li>
                             </ul>
                         </li>
 

@@ -82,7 +82,32 @@ class CampaignsTable extends Table
             ->allowEmptyString('anchor_link')
             ->allowEmptyString('discount_code')
             ->allowEmptyString('note')
-            ->allowEmptyString('campaign_version');
+            ->allowEmptyString('campaign_version')
+            // Keyword SEO fields
+            ->allowEmptyString('keyword_seo_code')
+            ->allowEmptyString('keyword_seo_status')
+            ->add('seo_target_views', 'numeric', [
+                'rule' => 'numeric',
+                'message' => __('Must be a number'),
+                'allowEmpty' => true
+            ])
+            ->add('seo_current_views', 'numeric', [
+                'rule' => 'numeric',
+                'message' => __('Must be a number'),
+                'allowEmpty' => true
+            ])
+            ->add('seo_wait_seconds', 'inList', [
+                'rule' => ['inList', [60, 90, 120, 200]],
+                'message' => __('Choose valid waiting time: 60, 90, 120, or 200 seconds'),
+                'allowEmpty' => true
+            ])
+            ->allowEmptyString('seo_image_1')
+            ->allowEmptyString('seo_image_2')
+            ->add('seo_price_usd', 'numeric', [
+                'rule' => 'numeric',
+                'message' => __('Must be a valid price'),
+                'allowEmpty' => true
+            ]);
 
         return $validator;
     }
