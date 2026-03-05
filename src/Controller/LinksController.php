@@ -69,9 +69,9 @@ class LinksController extends FrontController
         if (null !== $this->Auth->user('id')) {
             $user_id = $this->Auth->user('id');
         }
-        
 
-        if ( $user_id === 1 && (bool) get_option('enable_captcha_shortlink_anonymous', false) && isset_recaptcha() && !$this->Recaptcha->verify($this->request->getData('g-recaptcha-response'))) {
+
+        if ($user_id === 1 && (bool) get_option('enable_captcha_shortlink_anonymous', false) && isset_recaptcha() && !$this->Recaptcha->verify($this->request->getData('g-recaptcha-response'))) {
             $content = [
                 'status' => 'error',
                 'message' => __('The CAPTCHA was incorrect. Try again'),
@@ -145,7 +145,7 @@ class LinksController extends FrontController
 
         $data['user_id'] = $user->id;
         $data['url'] = $url;
-        
+
         $data['domain'] = $domain;
 
         if (empty($reqData['alias'])) {
@@ -249,11 +249,11 @@ class LinksController extends FrontController
         $url = parse_url($url, PHP_URL_SCHEME) === null ? 'http://' . $url : $url;
 
         $link = $this->Links->find()->where([
-                'user_id' => $user->id,
-                'status' => 1,
-                'ad_type' => $ad_type,
-                'url' => $url
-            ])->first();
+            'user_id' => $user->id,
+            'status' => 1,
+            'ad_type' => $ad_type,
+            'url' => $url
+        ])->first();
 
         if ($link) {
             return $this->redirect(get_short_url($link->alias));
@@ -341,10 +341,10 @@ class LinksController extends FrontController
         $url = parse_url($url, PHP_URL_SCHEME) === null ? 'http://' . $url : $url;
 
         $link = $this->Links->find()->where([
-                'url' => $url,
-                'user_id' => $user->id,
-                'ad_type' => $ad_type
-            ])->first();
+            'url' => $url,
+            'user_id' => $user->id,
+            'ad_type' => $ad_type
+        ])->first();
 
         if ($link) {
             $content = [
@@ -396,7 +396,7 @@ class LinksController extends FrontController
             return $this->response;
         }
 
-        $content =[
+        $content = [
             'status' => 'error',
             'message' => 'Invalid URL',
             'shortenedUrl' => ''
@@ -404,11 +404,11 @@ class LinksController extends FrontController
         $this->response = $this->response->withStringBody($this->apiContent($content, $format));
         return $this->response;
     }
-    
+
     protected function apiContent($content = [], $format = 'json')
     {
         $body = json_encode($content);
-        if( $format === 'text' ) {
+        if ($format === 'text') {
             $body = $content['shortenedUrl'];
         }
         return $body;
@@ -452,14 +452,14 @@ class LinksController extends FrontController
                 'cui' => 0,
                 'cii' => 0,
                 'ref' => (env('HTTP_REFERER')) ? env('HTTP_REFERER') : '',
-                ], get_ip(), 10);
+            ], get_ip(), 10);
             return $this->redirect($link->url);
         }
 
         $this->viewBuilder()->setLayout('captcha');
         $this->render('captcha');
 
-        if (!( (get_option('enable_captcha_shortlink') == 'yes') && isset_recaptcha() ) || $this->request->is('post')) {
+        if (!((get_option('enable_captcha_shortlink') == 'yes') && isset_recaptcha()) || $this->request->is('post')) {
 
             if ((get_option('enable_captcha_shortlink') == 'yes') && isset_recaptcha() && !$this->Recaptcha->verify($this->request->getData('g-recaptcha-response'))) {
                 throw new BadRequestException(__('The CAPTCHA was incorrect. Try again'));
@@ -467,7 +467,7 @@ class LinksController extends FrontController
 
             //env('HTTP_REFERER', $this->request->getData('ref'));
 
-            $_SERVER['HTTP_REFERER'] = (!( (get_option('enable_captcha_shortlink') == 'yes') && isset_recaptcha() )) ? env('HTTP_REFERER') : $this->request->getData('ref');
+            $_SERVER['HTTP_REFERER'] = (!((get_option('enable_captcha_shortlink') == 'yes') && isset_recaptcha())) ? env('HTTP_REFERER') : $this->request->getData('ref');
 
             $this->_setVisitorCookie();
 
@@ -715,9 +715,9 @@ class LinksController extends FrontController
             }
 
             $link = $this->Links->find()->contain(['Users'])->where([
-                    'Links.alias' => $this->request->getData('alias'),
-                    'Links.status <>' => 3
-                ])->first();
+                'Links.alias' => $this->request->getData('alias'),
+                'Links.status <>' => 3
+            ])->first();
             if (!$link) {
                 $content = [
                     'status' => 'error',
@@ -770,9 +770,6 @@ class LinksController extends FrontController
                 }
 
                 $codeFromRequest = $this->request->getData('code');
-                if ($codeFromRequest === null && $this->request->getData('code') !== null) {
-                    $codeFromRequest = $this->request->getData('code');
-                }
                 $submittedCode = is_string($codeFromRequest) ? strtoupper(trim($codeFromRequest)) : '';
                 $sessionCodeNormalized = is_string($sessionCode) ? strtoupper(trim($sessionCode)) : '';
                 if (empty($sessionCodeNormalized)) {
@@ -1204,43 +1201,43 @@ class LinksController extends FrontController
         /**
          * Add statistic record (tất cả campaign đều trả tiền, kể cả default)
          */
-        Log::info('Earn success', ['alias' => $link->alias ?? null, 'user_id' => $link->user_id, 'publisher_price' => $campaign_item['publisher_price'] ?? $campaign_item->publisher_price ?? 0]);
+        Log::info('Earn success', ['alias' => $link->alias ?? null, 'user_id' => $link->user_id, 'publisher_price' => $campaign_item->publisher_price ?? 0]);
 
         $user_update = $this->Links->Users->get($link->user_id);
-        $user_update->publisher_earnings += $campaign_item['publisher_price'] / 1000;
+        $user_update->publisher_earnings += $campaign_item->publisher_price / 1000;
 
         $this->Links->Users->save($user_update);
 
         $referral_id = $referral_earn = 0;
-        
+
         if (!empty($user_update->referred_by)) {
             $referral_percentage = get_option('referral_percentage', 20) / 100;
-            $referral_value = ( $campaign_item['publisher_price'] / 1000 ) * $referral_percentage;
-            
+            $referral_value = ($campaign_item->publisher_price / 1000) * $referral_percentage;
+
             $user_referred_by = $this->Links->Users->get($user_update->referred_by);
             $user_referred_by->referral_earnings += $referral_value;
 
             $this->Links->Users->save($user_referred_by);
-            
+
             $referral_id = $user_update->referred_by;
             $referral_earn = $referral_value;
         }
-        
-        
+
+
         $country = $this->Links->Statistics->get_country($cookie['ip']);
 
         $statistic = $this->Links->Statistics->newEntity([]);
 
         $statistic->link_id = $link->id;
         $statistic->user_id = $link->user_id;
-        $statistic->ad_type = $campaign_item['campaign']['ad_type'];
-        $statistic->campaign_id = $campaign_item['campaign']['id'];
-        $statistic->campaign_user_id = $campaign_item['campaign']['user_id'];
-        $statistic->campaign_item_id = $campaign_item['id'];
+        $statistic->ad_type = $campaign_item->campaign->ad_type;
+        $statistic->campaign_id = $campaign_item->campaign->id;
+        $statistic->campaign_user_id = $campaign_item->campaign->user_id;
+        $statistic->campaign_item_id = $campaign_item->id;
         $statistic->ip = $cookie['ip'];
         $statistic->country = $country;
-        $statistic->owner_earn = ($campaign_item['advertiser_price'] - $campaign_item['publisher_price']) / 1000;
-        $statistic->publisher_earn = $campaign_item['publisher_price'] / 1000;
+        $statistic->owner_earn = ($campaign_item->advertiser_price - $campaign_item->publisher_price) / 1000;
+        $statistic->publisher_earn = $campaign_item->publisher_price / 1000;
         $statistic->referral_id = $referral_id;
         $statistic->referral_earn = $referral_earn;
         $statistic->referer_domain = (parse_url($data['ref'], PHP_URL_HOST) ? parse_url($data['ref'], PHP_URL_HOST) : 'Direct');
@@ -1254,13 +1251,13 @@ class LinksController extends FrontController
          * Interstitial (country=all): purchase = tổng view → weight = views/purchase*100
          * Banner/Popup (theo quốc gia): purchase = số đơn vị 1000 → weight = views/(purchase*1000)*100
          */
-        $itemCountry = $campaign_item['country'] ?? $campaign_item->country ?? '';
-        $purchase = (int) ($campaign_item['purchase'] ?? $campaign_item->purchase ?? 1);
+        $itemCountry = $campaign_item->country ?? '';
+        $purchase = (int) ($campaign_item->purchase ?? 1);
         $totalSlots = ('all' === $itemCountry) ? $purchase : ($purchase * 1000);
         $campaign_item_update = $CampaignItems->newEntity([]);
-        $campaign_item_update->id = $campaign_item['id'];
-        $campaign_item_update->views = $campaign_item['views'] + 1;
-        $campaign_item_update->weight = (($campaign_item['views'] + 1) / $totalSlots) * 100;
+        $campaign_item_update->id = $campaign_item->id;
+        $campaign_item_update->views = $campaign_item->views + 1;
+        $campaign_item_update->weight = (($campaign_item->views + 1) / $totalSlots) * 100;
         $CampaignItems->save($campaign_item_update);
 
         // Update link hits
@@ -1326,7 +1323,7 @@ class LinksController extends FrontController
             return;
         }
         $link->hits += 1;
-        $link->modified = $link->modified;
+        $link->setDirty('modified', false); // Không tự động cập nhật timestamp khi chỉ tăng hits
         $this->Links->save($link);
         return;
     }

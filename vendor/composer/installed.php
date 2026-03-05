@@ -3,7 +3,7 @@
         'name' => 'adlinkfly/shorten',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'c378214d9d19843573ba3595504831311d2bbdc5',
+        'reference' => '48ec002948c6324abeaa6115c7a34da782b86823',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'adlinkfly/shorten' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'c378214d9d19843573ba3595504831311d2bbdc5',
+            'reference' => '48ec002948c6324abeaa6115c7a34da782b86823',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

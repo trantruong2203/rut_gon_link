@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Controller\Admin;
 
@@ -16,12 +16,12 @@ class WithdrawsController extends AppAdminController
         $withdraws = $this->paginate($query);
 
         $this->set('withdraws', $withdraws);
-        
+
         $publishers_earnings = $this->Withdraws->Users->find()
             ->select(['total' => 'SUM(publisher_earnings)'])
             ->first();
         $this->set('publishers_earnings', $publishers_earnings->total);
-        
+
         $referral_earnings = $this->Withdraws->Users->find()
             ->select(['total' => 'SUM(referral_earnings)'])
             ->first();
@@ -33,13 +33,13 @@ class WithdrawsController extends AppAdminController
             ->first();
 
         $this->set('pending_withdrawn', $pending_withdrawn->total);
-        
-        $tolal_withdrawn = $this->Withdraws->find()
+
+        $total_withdrawn = $this->Withdraws->find()
             ->select(['total' => 'SUM(amount)'])
             ->where(['status' => 3])
-             ->first();
+            ->first();
 
-        $this->set('tolal_withdrawn', $tolal_withdrawn->total);
+        $this->set('total_withdrawn', $total_withdrawn->total);
     }
 
     public function edit($id = null)
@@ -74,38 +74,14 @@ class WithdrawsController extends AppAdminController
 
         $withdraw = $this->Withdraws->get($id);
 
-        $withdraw->status = 1;
+        $withdraw->status = 2; // 2 = Approved (pending payment), cÃ³ thá»ƒ reject tá»« Ä‘Ã¢y
 
         if ($this->Withdraws->save($withdraw)) {
-            $this->Flash->success(__('The campaign with id: {0} has been approved.', $id));
+            $this->Flash->success(__('The withdraw with id: {0} has been approved.', $id));
             return $this->redirect(['action' => 'index']);
-
-            /*
-              // http://stackoverflow.com/q/18622310
-              // http://stackoverflow.com/q/9956081
-              $return_url  = Router::url(['controller' => 'Withdraws', 'action' => 'index' ], true);
-              $paymentData = [
-              'cmd'           => '_send-money',
-              'amount'        => $withdraw->amount,
-              'amount_ccode' => get_option( 'currency_code' ),
-              'cmd'           => '_send-money',
-              'email' => 'personal@email.com',
-              //'payment_source' => 'p2p_mktgpage',
-              //'payment_type' => 'Payment%20Owed',
-              'sender_email' => get_option( 'paypal_email' ),
-              'type'      => 'external'
-              ];
-
-              $query       = http_build_query($paymentData, '&amp;');
-
-              $paypalURL = 'https://www.sandbox.paypal.com/cgi-bin/webscr?';
-
-              if (get_option('paypal_sandbox', 'no') == 'no') {
-              $paypalURL = 'https://www.paypal.com/cgi-bin/webscr?';
-              }
-
-              return $this->redirect($paypalURL . $query);
-             */
+        } else {
+            $this->Flash->error(__('Unable to approve the withdraw. Please try again.'));
+            return $this->redirect(['action' => 'index']);
         }
     }
 
@@ -113,10 +89,7 @@ class WithdrawsController extends AppAdminController
     {
         $this->request->allowMethod(['post', 'put']);
 
-        $withdraw = $this->Withdraws->get($id);
-        if (!$withdraw) {
-            throw new NotFoundException(__('Invalid Withdraw'));
-        }
+        $withdraw = $this->Withdraws->get($id); // Tá»± throw RecordNotFoundException náº¿u khÃ´ng tÃ¬m tháº¥y
 
         $withdraw->status = 3;
 
@@ -128,6 +101,9 @@ class WithdrawsController extends AppAdminController
             }
             $this->Flash->success(__('The withdraw has been completed.'));
             return $this->redirect(['action' => 'index']);
+        } else {
+            $this->Flash->error(__('Unable to complete the withdraw. Please try again.'));
+            return $this->redirect(['action' => 'index']);
         }
     }
 
@@ -135,10 +111,7 @@ class WithdrawsController extends AppAdminController
     {
         $this->request->allowMethod(['post', 'put']);
 
-        $withdraw = $this->Withdraws->get($id);
-        if (!$withdraw) {
-            throw new NotFoundException(__('Invalid Withdraw'));
-        }
+        $withdraw = $this->Withdraws->get($id); // Tá»± throw RecordNotFoundException náº¿u khÃ´ng tÃ¬m tháº¥y
 
         if ($withdraw->status != 2) {
             $this->Flash->error(__('Only pending withdrawals can be rejected.'));
@@ -159,3 +132,4 @@ class WithdrawsController extends AppAdminController
         }
     }
 }
+

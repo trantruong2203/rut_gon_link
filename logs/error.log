@@ -10814,3 +10814,488 @@ Stack Trace:
 
 Request URL: /admin/campaigns/create-interstitial
 Referer URL: http://localhost:8765/admin/campaigns/create-interstitial
+2026-03-05 05:56:21 error: [Cake\Http\Exception\MissingControllerException] Controller class .wellKnown could not be found. in E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php on line 338
+Exception Attributes: array (
+  'controller' => '.wellKnown',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+  'class' => '.wellKnown',
+)
+Stack Trace:
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:323
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:73
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\BaseApplication.php:320
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:86
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Middleware\CsrfProtectionMiddleware.php:176
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Middleware\BodyParserMiddleware.php:157
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\admad\cakephp-social-auth\src\Middleware\SocialAuthMiddleware.php:221
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php:189
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php:72
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php:149
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:67
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Server.php:99
+- E:\rut gon link\rut_gon_link\webroot\index.php:60
+- [main]:
+
+Request URL: /.well-known/appspecific/com.chrome.devtools.json
+2026-03-05 05:56:22 error: [Cake\Http\Exception\MissingControllerException] Controller class Vendor could not be found. in E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php on line 338
+Exception Attributes: array (
+  'controller' => 'Vendor',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+  'class' => 'Vendor',
+)
+Stack Trace:
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:75
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\BaseApplication.php:320
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:86
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Middleware\CsrfProtectionMiddleware.php:176
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Middleware\BodyParserMiddleware.php:157
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\admad\cakephp-social-auth\src\Middleware\SocialAuthMiddleware.php:221
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php:189
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php:77
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php:149
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:67
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Server.php:99
+- E:\rut gon link\rut_gon_link\webroot\index.php:60
+- [main]:
+
+Request URL: /vendor/bootstrap/css/bootstrap.min.css.map
+2026-03-05 05:56:25 error: [Cake\Http\Exception\MissingControllerException] Controller class .wellKnown could not be found. in E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php on line 338
+Exception Attributes: array (
+  'controller' => '.wellKnown',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+  'class' => '.wellKnown',
+)
+Stack Trace:
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:323
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:73
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\BaseApplication.php:320
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:86
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Middleware\CsrfProtectionMiddleware.php:176
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Middleware\BodyParserMiddleware.php:157
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\admad\cakephp-social-auth\src\Middleware\SocialAuthMiddleware.php:221
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php:189
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php:72
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php:149
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:67
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Server.php:99
+- E:\rut gon link\rut_gon_link\webroot\index.php:60
+- [main]:
+
+Request URL: /.well-known/appspecific/com.chrome.devtools.json
+2026-03-05 05:56:26 error: [Cake\Http\Exception\MissingControllerException] Controller class .wellKnown could not be found. in E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php on line 338
+Exception Attributes: array (
+  'controller' => '.wellKnown',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+  'class' => '.wellKnown',
+)
+Stack Trace:
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:323
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:73
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\BaseApplication.php:320
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:86
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Middleware\CsrfProtectionMiddleware.php:176
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Middleware\BodyParserMiddleware.php:157
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\admad\cakephp-social-auth\src\Middleware\SocialAuthMiddleware.php:221
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php:189
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php:72
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php:149
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:67
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Server.php:99
+- E:\rut gon link\rut_gon_link\webroot\index.php:60
+- [main]:
+
+Request URL: /.well-known/appspecific/com.chrome.devtools.json
+2026-03-05 05:56:31 error: [Cake\Http\Exception\MissingControllerException] Controller class .wellKnown could not be found. in E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php on line 338
+Exception Attributes: array (
+  'controller' => '.wellKnown',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+  'class' => '.wellKnown',
+)
+Stack Trace:
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:323
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:73
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\BaseApplication.php:320
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:86
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Middleware\CsrfProtectionMiddleware.php:176
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Middleware\BodyParserMiddleware.php:157
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\admad\cakephp-social-auth\src\Middleware\SocialAuthMiddleware.php:221
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php:189
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php:72
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php:149
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:67
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Server.php:99
+- E:\rut gon link\rut_gon_link\webroot\index.php:60
+- [main]:
+
+Request URL: /.well-known/appspecific/com.chrome.devtools.json
+2026-03-05 05:56:33 error: [Cake\Http\Exception\MissingControllerException] Controller class .wellKnown could not be found. in E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php on line 338
+Exception Attributes: array (
+  'controller' => '.wellKnown',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+  'class' => '.wellKnown',
+)
+Stack Trace:
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:323
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:73
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\BaseApplication.php:320
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:86
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Middleware\CsrfProtectionMiddleware.php:176
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Middleware\BodyParserMiddleware.php:157
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\admad\cakephp-social-auth\src\Middleware\SocialAuthMiddleware.php:221
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php:189
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php:72
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php:149
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:67
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Server.php:99
+- E:\rut gon link\rut_gon_link\webroot\index.php:60
+- [main]:
+
+Request URL: /.well-known/appspecific/com.chrome.devtools.json
+2026-03-05 05:56:37 error: [Cake\Http\Exception\MissingControllerException] Controller class .wellKnown could not be found. in E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php on line 338
+Exception Attributes: array (
+  'controller' => '.wellKnown',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+  'class' => '.wellKnown',
+)
+Stack Trace:
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:323
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:73
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\BaseApplication.php:320
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:86
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Middleware\CsrfProtectionMiddleware.php:176
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Middleware\BodyParserMiddleware.php:157
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\admad\cakephp-social-auth\src\Middleware\SocialAuthMiddleware.php:221
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php:189
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php:72
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php:149
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:67
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Server.php:99
+- E:\rut gon link\rut_gon_link\webroot\index.php:60
+- [main]:
+
+Request URL: /.well-known/appspecific/com.chrome.devtools.json
+2026-03-05 05:56:39 error: [Cake\Http\Exception\MissingControllerException] Controller class .wellKnown could not be found. in E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php on line 338
+Exception Attributes: array (
+  'controller' => '.wellKnown',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+  'class' => '.wellKnown',
+)
+Stack Trace:
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:323
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:73
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\BaseApplication.php:320
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:86
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Middleware\CsrfProtectionMiddleware.php:176
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Middleware\BodyParserMiddleware.php:157
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\admad\cakephp-social-auth\src\Middleware\SocialAuthMiddleware.php:221
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php:189
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php:72
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php:149
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:67
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Server.php:99
+- E:\rut gon link\rut_gon_link\webroot\index.php:60
+- [main]:
+
+Request URL: /.well-known/appspecific/com.chrome.devtools.json
+2026-03-05 05:56:41 error: [Cake\Http\Exception\MissingControllerException] Controller class .wellKnown could not be found. in E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php on line 338
+Exception Attributes: array (
+  'controller' => '.wellKnown',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+  'class' => '.wellKnown',
+)
+Stack Trace:
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:323
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:73
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\BaseApplication.php:320
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:86
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Middleware\CsrfProtectionMiddleware.php:176
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Middleware\BodyParserMiddleware.php:157
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\admad\cakephp-social-auth\src\Middleware\SocialAuthMiddleware.php:221
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php:189
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php:72
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php:149
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:67
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Server.php:99
+- E:\rut gon link\rut_gon_link\webroot\index.php:60
+- [main]:
+
+Request URL: /.well-known/appspecific/com.chrome.devtools.json
+2026-03-05 05:56:42 error: [Cake\Http\Exception\MissingControllerException] Controller class .wellKnown could not be found. in E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php on line 338
+Exception Attributes: array (
+  'controller' => '.wellKnown',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+  'class' => '.wellKnown',
+)
+Stack Trace:
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:323
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:73
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\BaseApplication.php:320
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:86
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Middleware\CsrfProtectionMiddleware.php:176
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Middleware\BodyParserMiddleware.php:157
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\admad\cakephp-social-auth\src\Middleware\SocialAuthMiddleware.php:221
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php:189
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php:72
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php:149
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:67
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Server.php:99
+- E:\rut gon link\rut_gon_link\webroot\index.php:60
+- [main]:
+
+Request URL: /.well-known/appspecific/com.chrome.devtools.json
+2026-03-05 05:56:44 error: [Cake\Http\Exception\MissingControllerException] Controller class .wellKnown could not be found. in E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php on line 338
+Exception Attributes: array (
+  'controller' => '.wellKnown',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+  'class' => '.wellKnown',
+)
+Stack Trace:
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:323
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:73
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\BaseApplication.php:320
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:86
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Middleware\CsrfProtectionMiddleware.php:176
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Middleware\BodyParserMiddleware.php:157
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\admad\cakephp-social-auth\src\Middleware\SocialAuthMiddleware.php:221
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php:189
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php:72
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php:149
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:67
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Server.php:99
+- E:\rut gon link\rut_gon_link\webroot\index.php:60
+- [main]:
+
+Request URL: /.well-known/appspecific/com.chrome.devtools.json
+2026-03-05 05:56:47 error: [Cake\Http\Exception\MissingControllerException] Controller class .wellKnown could not be found. in E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php on line 338
+Exception Attributes: array (
+  'controller' => '.wellKnown',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+  'class' => '.wellKnown',
+)
+Stack Trace:
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:323
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:73
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\BaseApplication.php:320
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:86
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Middleware\CsrfProtectionMiddleware.php:176
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Middleware\BodyParserMiddleware.php:157
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\admad\cakephp-social-auth\src\Middleware\SocialAuthMiddleware.php:221
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php:189
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php:72
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php:149
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:67
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Server.php:99
+- E:\rut gon link\rut_gon_link\webroot\index.php:60
+- [main]:
+
+Request URL: /.well-known/appspecific/com.chrome.devtools.json
+2026-03-05 05:56:50 error: [Cake\Http\Exception\MissingControllerException] Controller class .wellKnown could not be found. in E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php on line 338
+Exception Attributes: array (
+  'controller' => '.wellKnown',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+  'class' => '.wellKnown',
+)
+Stack Trace:
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:323
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:73
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\BaseApplication.php:320
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:86
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Middleware\CsrfProtectionMiddleware.php:176
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Middleware\BodyParserMiddleware.php:157
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\admad\cakephp-social-auth\src\Middleware\SocialAuthMiddleware.php:221
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php:189
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php:72
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php:149
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:67
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Server.php:99
+- E:\rut gon link\rut_gon_link\webroot\index.php:60
+- [main]:
+
+Request URL: /.well-known/appspecific/com.chrome.devtools.json
+2026-03-05 05:57:01 error: [Cake\Http\Exception\MissingControllerException] Controller class .wellKnown could not be found. in E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php on line 338
+Exception Attributes: array (
+  'controller' => '.wellKnown',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+  'class' => '.wellKnown',
+)
+Stack Trace:
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:323
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:73
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\BaseApplication.php:320
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:86
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Middleware\CsrfProtectionMiddleware.php:176
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Middleware\BodyParserMiddleware.php:157
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\admad\cakephp-social-auth\src\Middleware\SocialAuthMiddleware.php:221
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php:189
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php:72
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php:149
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:67
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Server.php:99
+- E:\rut gon link\rut_gon_link\webroot\index.php:60
+- [main]:
+
+Request URL: /.well-known/appspecific/com.chrome.devtools.json
+2026-03-05 07:11:33 error: [Cake\Http\Exception\NotFoundException] Phiên đã hết hạn. Vui lòng quay lại link và thử lại. in E:\rut gon link\rut_gon_link\src\Controller\LinksController.php on line 615
+Stack Trace:
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\Controller.php:560
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:140
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:115
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\BaseApplication.php:325
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:86
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Middleware\CsrfProtectionMiddleware.php:176
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Middleware\BodyParserMiddleware.php:157
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\admad\cakephp-social-auth\src\Middleware\SocialAuthMiddleware.php:221
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php:189
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php:68
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php:149
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:67
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Server.php:99
+- E:\rut gon link\rut_gon_link\webroot\index.php:60
+- [main]:
+
+Request URL: /landing/Hm46lE9h
+Referer URL: http://localhost:8765/Hm46lE9h
+2026-03-05 07:11:38 error: [Cake\Http\Exception\NotFoundException] Phiên đã hết hạn. Vui lòng quay lại link và thử lại. in E:\rut gon link\rut_gon_link\src\Controller\LinksController.php on line 615
+Stack Trace:
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\Controller.php:560
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:140
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:115
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\BaseApplication.php:325
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:86
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Middleware\CsrfProtectionMiddleware.php:176
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Middleware\BodyParserMiddleware.php:157
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\admad\cakephp-social-auth\src\Middleware\SocialAuthMiddleware.php:221
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php:189
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php:68
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php:149
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:67
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Server.php:99
+- E:\rut gon link\rut_gon_link\webroot\index.php:60
+- [main]:
+
+Request URL: /landing/Hm46lE9h
+Referer URL: http://localhost:8765/Hm46lE9h

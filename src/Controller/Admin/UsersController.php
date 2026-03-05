@@ -17,14 +17,14 @@ class UsersController extends AppAdminController
             ->first();
 
         $this->set('owner_earnings', $owner_earnings->total);
-        
+
         $publisher_earnings = $this->Users->Statistics->find()
             ->select(['total' => 'SUM(Statistics.publisher_earn)'])
             ->where(['Statistics.publisher_earn >' => 0])
             ->first();
 
         $this->set('publisher_earnings', $publisher_earnings->total);
-        
+
         $referral_earnings = $this->Users->Statistics->find()
             ->select(['total' => 'SUM(Statistics.referral_earn)'])
             ->where(['Statistics.referral_earn >' => 0])
@@ -38,7 +38,7 @@ class UsersController extends AppAdminController
 
         $this->set('total_views', $total_views);
 
-///////////////////////////
+        ///////////////////////////
 
         $last_record = $this->Users->Statistics->find()
             ->select('created')
@@ -74,7 +74,7 @@ class UsersController extends AppAdminController
         }
 
         $this->set('year_month', $year_month);
-        
+
         $to_month = Time::now()->format('Y-m');
         if ($this->request->is('post')) {
             $to_month = explode('-', $this->request->getData('to_month'));
@@ -87,10 +87,10 @@ class UsersController extends AppAdminController
             $year = (int) $current_time->format('Y');
             $month = (int) $current_time->format('m');
         }
-        
+
         $date1 = Time::now()->year($year)->month($month)->startOfMonth()->format('Y-m-d H:i:s');
         $date2 = Time::now()->year($year)->month($month)->endOfMonth()->format('Y-m-d H:i:s');
-        
+
         $views = $this->Users->Statistics->find()
             ->select([
                 'day' => 'DATE_FORMAT(Statistics.created,"%d-%m-%Y")',
@@ -110,7 +110,7 @@ class UsersController extends AppAdminController
         $this->set('views', $views);
 
         $CurrentMonthDays = [];
-        
+
         $targetTime = Time::now();
         $targetTime->year($year)
             ->month($month)
@@ -130,11 +130,15 @@ class UsersController extends AppAdminController
             $CurrentMonthDays[$day]['referral_earnings'] = $view->referral_earnings;
         }
         $this->set('CurrentMonthDays', $CurrentMonthDays);
-        
+
         $popularLinks = $this->Users->Statistics->find()
             ->contain(['Links'])
             ->select([
-                'Links.alias','Links.url','Links.title','Links.domain','Links.created',
+                'Links.alias',
+                'Links.url',
+                'Links.title',
+                'Links.domain',
+                'Links.created',
                 'views' => 'COUNT(Statistics.link_id)',
                 'publisher_earnings' => 'SUM(Statistics.publisher_earn)'
             ])
@@ -154,18 +158,18 @@ class UsersController extends AppAdminController
     public function index()
     {
         $conditions = [];
-        
+
         $filter_fields = ['id', 'status', 'username', 'email', 'country', 'other_fields'];
-        
+
         //Transform POST into GET
         if ($this->request->is(['post', 'put']) && $this->request->getData('Filter') !== null) {
-            
+
             $filter_url = [];
-            
+
             $filter_url['controller'] = $this->request->getParam('controller');
-            
+
             $filter_url['action'] = $this->request->getParam('action');
-            
+
             // We need to overwrite the page every time we change the parameters
             $filter_url['page'] = 1;
 
@@ -196,8 +200,8 @@ class UsersController extends AppAdminController
                             ['Users.last_name LIKE' => '%' . $value . '%'],
                             ['Users.address1 LIKE' => '%' . $value . '%']
                         ];
-                    } elseif (in_array($param_name, ['id', 'status', 'country']) ) {
-                        if( $param_name == 'status' && !in_array($value, [1, 2, 3]) ) {
+                    } elseif (in_array($param_name, ['id', 'status', 'country'])) {
+                        if ($param_name == 'status' && !in_array($value, [1, 2, 3])) {
                             continue;
                         }
                         $conditions['Users.' . $param_name] = $value;
@@ -207,23 +211,26 @@ class UsersController extends AppAdminController
             }
             $this->request = $this->request->withData('Filter', $filterData);
         }
-        
+
         $query = $this->Users->find()
             ->where($conditions)
             ->where(['Users.username <>' => 'anonymous']);
         $users = $this->paginate($query);
         $this->set('users', $users);
     }
-    
+
     public function referrals()
     {
-        $query = $this->Users->find()->where(['Users.referred_by >' => 0]);
+        // Dùng contain() để join bảng Users 1 lần, tránh N+1 query
+        $query = $this->Users->find()
+            ->contain([
+                'ReferredBy' => function ($q) {
+                    return $q->select(['id', 'username']);
+                }
+            ])
+            ->where(['Users.referred_by >' => 0]);
         $referrals = $this->paginate($query);
-        
-        foreach ($referrals as $referral) {
-            $referral->referred_by_username = $this->Users->get($referral->referred_by)->username;
-        }
-        
+
         $this->set('referrals', $referrals);
     }
 
@@ -239,7 +246,7 @@ class UsersController extends AppAdminController
         }
         $this->set('user', $user);
     }
-    
+
     public function add()
     {
         $user = $this->Users->newEntity([]);
@@ -257,13 +264,13 @@ class UsersController extends AppAdminController
         }
         $this->set('user', $user);
     }
-    
+
     public function edit($id = null)
     {
         if (!$id) {
             throw new NotFoundException(__('Invalid User'));
         }
-        
+
         $user = $this->Users->findById($id)->where(['Users.username <>' => 'anonymous'])->first();
         if (!$user) {
             throw new NotFoundException(__('Invalid User'));
@@ -280,13 +287,18 @@ class UsersController extends AppAdminController
         }
         $this->set('user', $user);
     }
-    
+
     public function deactivate($id = null)
     {
         $this->request->allowMethod(['post', 'delete']);
 
         $user = $this->Users->findById($id)->where(['Users.username <>' => 'anonymous'])->first();
-        
+
+        if (!$user) {
+            $this->Flash->error(__('User not found.'));
+            return $this->redirect(['action' => 'index']);
+        }
+
         $user->status = 3;
 
         if ($this->Users->save($user)) {

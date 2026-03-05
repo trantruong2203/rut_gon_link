@@ -25,18 +25,18 @@ class CampaignsController extends AppAdminController
     public function index()
     {
         $conditions = [];
-        
+
         $filter_fields = ['id', 'user_id', 'status', 'ad_type', 'name', 'other_fields', 'verification_status'];
-        
+
         //Transform POST into GET
         if ($this->request->is(['post', 'put']) && $this->request->getData('Filter') !== null) {
-            
+
             $filter_url = [];
-            
+
             $filter_url['controller'] = $this->request->getParam('controller');
-            
+
             $filter_url['action'] = $this->request->getParam('action');
-            
+
             // We need to overwrite the page every time we change the parameters
             $filter_url['page'] = 1;
 
@@ -68,14 +68,14 @@ class CampaignsController extends AppAdminController
                             ['Campaigns.banner_name LIKE' => '%' . $value . '%'],
                             ['Campaigns.banner_size LIKE' => '%' . $value . '%']
                         ];
-                    } elseif (in_array($param_name, ['id', 'user_id', 'status', 'ad_type', 'verification_status']) ) {
-                        if( $param_name == 'status' && !in_array($value, [1, 2, 3, 4, 5, 6, 7, 8]) ) {
+                    } elseif (in_array($param_name, ['id', 'user_id', 'status', 'ad_type', 'verification_status'])) {
+                        if ($param_name == 'status' && !in_array($value, [1, 2, 3, 4, 5, 6, 7, 8])) {
                             continue;
                         }
-                        if( $param_name == 'ad_type' && !in_array($value, [1, 2, 3]) ) {
+                        if ($param_name == 'ad_type' && !in_array($value, [1, 2, 3])) {
                             continue;
                         }
-                        if( $param_name == 'verification_status' && !in_array((int)$value, [0, 1, 2, 3], true) ) {
+                        if ($param_name == 'verification_status' && !in_array((int)$value, [0, 1, 2, 3], true)) {
                             continue;
                         }
                         $conditions['Campaigns.' . $param_name] = $value;
@@ -85,7 +85,7 @@ class CampaignsController extends AppAdminController
             }
             $this->request = $this->request->withData('Filter', $filterData);
         }
-        
+
         $query = $this->Campaigns->find()
             ->contain(['Users', 'CampaignItems'])
             ->where($conditions);
@@ -249,18 +249,18 @@ class CampaignsController extends AppAdminController
         }
         $this->set('campaign', $campaign);
     }
-    
+
     public function createBanner()
     {
         $campaign = $this->Campaigns->newEntity([], ['associated' => ['CampaignItems']]);
         $this->set('campaign', $campaign);
-        
+
         $users = $this->Campaigns->Users->find('list', [
             'keyField' => 'id',
             'valueField' => 'username'
         ]);
         $this->set('users', $users);
-        
+
         if ($this->request->is('post')) {
             $campaign->ad_type = 2;
 
@@ -276,8 +276,8 @@ class CampaignsController extends AppAdminController
                 }
                 $data['price'] += $value['purchase'] * $value['advertiser_price'];
             }
-            
-            if(count($data['campaign_items'] ?? []) == 0){
+
+            if (count($data['campaign_items'] ?? []) == 0) {
                 return $this->Flash->error(__('You must purchase at least from one country.'));
             }
 
@@ -285,25 +285,25 @@ class CampaignsController extends AppAdminController
 
             if ($this->Campaigns->save($campaign)) {
                 $this->Flash->success(__('Your campaign has been created.'));
-                return $this->redirect( ['action' => 'index' ] );
+                return $this->redirect(['action' => 'index']);
             } else {
                 $this->Flash->error(__('Unable to create your campaign.'));
             }
         }
         $this->set('campaign', $campaign);
     }
-    
+
     public function createPopup()
     {
         $campaign = $this->Campaigns->newEntity([], ['associated' => ['CampaignItems']]);
         $this->set('campaign', $campaign);
-        
+
         $users = $this->Campaigns->Users->find('list', [
             'keyField' => 'id',
             'valueField' => 'username'
         ]);
         $this->set('users', $users);
-        
+
         if ($this->request->is('post')) {
             $campaign->ad_type = 3;
 
@@ -319,8 +319,8 @@ class CampaignsController extends AppAdminController
                 }
                 $data['price'] += $value['purchase'] * $value['advertiser_price'];
             }
-            
-            if(count($data['campaign_items'] ?? []) == 0){
+
+            if (count($data['campaign_items'] ?? []) == 0) {
                 return $this->Flash->error(__('You must purchase at least from one country.'));
             }
 
@@ -328,14 +328,14 @@ class CampaignsController extends AppAdminController
 
             if ($this->Campaigns->save($campaign)) {
                 $this->Flash->success(__('Your campaign has been created.'));
-                return $this->redirect( ['action' => 'index' ] );
+                return $this->redirect(['action' => 'index']);
             } else {
                 $this->Flash->error(__('Unable to create your campaign.'));
             }
         }
         $this->set('campaign', $campaign);
     }
-    
+
     public function edit($id = null)
     {
         if (!$id) {
@@ -350,7 +350,7 @@ class CampaignsController extends AppAdminController
         if (!$campaign) {
             throw new NotFoundException(__('Invalid campaign'));
         }
-        
+
         $users = $this->Campaigns->Users->find('list', [
             'keyField' => 'id',
             'valueField' => 'username'
@@ -432,7 +432,7 @@ class CampaignsController extends AppAdminController
             ->first();
 
         if (!$campaign) {
-            $this->Flash->success(__('Campaign not found'));
+            $this->Flash->error(__('Campaign not found.'));
             return $this->redirect(['action' => 'index']);
         }
 
@@ -452,7 +452,7 @@ class CampaignsController extends AppAdminController
             ->first();
 
         if (!$campaign) {
-            $this->Flash->success(__('Campaign not found'));
+            $this->Flash->error(__('Campaign not found.'));
             return $this->redirect(['action' => 'index']);
         }
 

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 $this->assign('title', __('Manage Withdraws'));
 $this->assign('description', '');
 $this->assign('content_title', __('Manage Withdraws'));
@@ -47,7 +47,7 @@ $statuses = [
     <div class="col-sm-3">
         <div class="small-box bg-green">
             <div class="inner">
-                <h3><?= display_price_currency($tolal_withdrawn); ?></h3>
+                <h3><?= display_price_currency($total_withdrawn); ?></h3>
                 <p><?= __('Tolal Withdrawn') ?></p>
             </div>
             <div class="icon"><i class="fa fa-usd"></i></div>
@@ -114,7 +114,7 @@ $statuses = [
     <!-- Shows the previous link -->
     <?php
     if ($this->Paginator->hasPrev()) {
-        echo $this->Paginator->prev('«', array('tag' => 'li'), null, array('class' => 'disabled', 'tag' => 'li', 'disabledTag' => 'a'));
+        echo $this->Paginator->prev('Â«', array('tag' => 'li'), null, array('class' => 'disabled', 'tag' => 'li', 'disabledTag' => 'a'));
     }
 
     ?>
@@ -135,8 +135,9 @@ $statuses = [
     <!-- Shows the next link -->
     <?php
     if ($this->Paginator->hasNext()) {
-        echo $this->Paginator->next('»', array('tag' => 'li'), null, array('class' => 'disabled', 'tag' => 'li', 'disabledTag' => 'a'));
+        echo $this->Paginator->next('Â»', array('tag' => 'li'), null, array('class' => 'disabled', 'tag' => 'li', 'disabledTag' => 'a'));
     }
 
     ?>
 </ul>
+
