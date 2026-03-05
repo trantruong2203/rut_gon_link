@@ -1,8 +1,8 @@
 <?php
 foreach(glob("/var/www/adlinkfly/plugins/*/templates/*") as $d) {
     $lower = strtolower($d);
-    if(!is_dir($lower) && is_dir($d)) {
-        copy($d, $lower);
+    if(!file_exists($lower) && is_dir($d)) {
+        exec("cp -r \"$d\" \"$lower\"");
     }
 }
 echo "Done";
