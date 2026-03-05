@@ -14,7 +14,16 @@ class CampaignsController extends AppMemberController
     public function initialize(): void
     {
         parent::initialize();
-        $this->FormProtection->setConfig('unlockedActions', ['ipn'], true);
+        // Unlock các action có tính toán giá động qua JS
+        $this->FormProtection->setConfig('unlockedActions', [
+            'ipn',
+            'createInterstitial',
+            'createBanner', 
+            'createPopup',
+            'editInterstitial',
+            'editBanner',
+            'editPopup'
+        ], true);
     }
 
     public function beforeFilter(\Cake\Event\EventInterface $event)
