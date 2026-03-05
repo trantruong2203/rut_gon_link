@@ -1,0 +1,966 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: AdLinkFly\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: vi_VN\n"
+
+msgid "Home"
+msgstr "Trang chủ"
+
+msgid "Advertising"
+msgstr "Quảng cáo"
+
+msgid "Payout Rates"
+msgstr "Bảng giá"
+
+msgid "Blog"
+msgstr "Blog"
+
+msgid "My Account"
+msgstr "Tài khoản của tôi"
+
+msgid "Dashboard"
+msgstr "Bảng điều khiển"
+
+msgid "Login"
+msgstr "Đăng nhập"
+
+msgid "Sign Up"
+msgstr "Đăng ký"
+
+msgid "Logout"
+msgstr "Đăng xuất"
+
+msgid "Settings"
+msgstr "Cài đặt"
+
+msgid "Statistics"
+msgstr "Thống kê"
+
+msgid "Manage Links"
+msgstr "Quản lý liên kết"
+
+msgid "Withdraws"
+msgstr "Rút tiền"
+
+msgid "Referrals"
+msgstr "Giới thiệu"
+
+msgid "Profile"
+msgstr "Hồ sơ"
+
+msgid "Member Area"
+msgstr "Khu vực thành viên"
+
+msgid "Toggle navigation"
+msgstr "Bật/Tắt menu"
+
+msgid "All Links"
+msgstr "Tất cả liên kết"
+
+msgid "Hidden Links"
+msgstr "Liên kết ẩn"
+
+msgid "Reports"
+msgstr "Báo cáo"
+
+msgid "Campaigns"
+msgstr "Chiến dịch"
+
+msgid "Users"
+msgstr "Người dùng"
+
+msgid "Pages"
+msgstr "Trang"
+
+msgid "Testimonials"
+msgstr "Đánh giá"
+
+msgid "Announcements"
+msgstr "Thông báo"
+
+msgid "General"
+msgstr "Chung"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Social Networks"
+msgstr "Mạng xã hội"
+
+msgid "Integrations"
+msgstr "Tích hợp"
+
+msgid "Security"
+msgstr "Bảo mật"
+
+msgid "Shorten"
+msgstr "Rút gọn"
+
+msgid "Copy"
+msgstr "Sao chép"
+
+msgid "Total Views"
+msgstr "Tổng lượt xem"
+
+msgid "Total Earnings"
+msgstr "Tổng thu nhập"
+
+msgid "Referral Earnings"
+msgstr "Thu nhập giới thiệu"
+
+msgid "Average CPM"
+msgstr "CPM Trung bình"
+
+msgid "Announcements"
+msgstr "Thông báo"
+
+msgid "Withdraw"
+msgstr "Rút tiền"
+
+msgid "View all"
+msgstr "Xem tất cả"
+
+msgid "Submit"
+msgstr "Gửi"
+
+msgid "Cancel"
+msgstr "Hủy"
+
+msgid "Save"
+msgstr "Lưu"
+
+msgid "Edit"
+msgstr "Sửa"
+
+msgid "Delete"
+msgstr "Xóa"
+
+msgid "Active"
+msgstr "Hoạt động"
+
+msgid "Inactive"
+msgstr "Không hoạt động"
+
+msgid "Pending"
+msgstr "Đang chờ"
+
+msgid "Completed"
+msgstr "Hoàn thành"
+
+msgid "Cancelled"
+msgstr "Đã hủy"
+
+msgid "Returned"
+msgstr "Đã trả lại"
+
+msgid "Administration Area"
+msgstr "Khu vực quản trị"
+
+msgid "Member since"
+msgstr "Thành viên từ"
+
+msgid "Log out"
+msgstr "Đăng xuất"
+
+msgid "New Shorten Link"
+msgstr "Link rút gọn mới"
+
+msgid "Tools"
+msgstr "Công cụ"
+
+msgid "Quick Link"
+msgstr "Link nhanh"
+
+msgid "Mass Shrinker"
+msgstr "Rút gọn hàng loạt"
+
+msgid "Full Page Script"
+msgstr "Script toàn trang"
+
+msgid "Developers API"
+msgstr "API nhà phát triển"
+
+msgid "List"
+msgstr "Danh sách"
+
+msgid "Create Interstitial Campaign"
+msgstr "Tạo chiến dịch Interstitial"
+
+msgid "Create Banner Campaign"
+msgstr "Tạo chiến dịch Banner"
+
+msgid "Create Popup Campaign"
+msgstr "Tạo chiến dịch Popup"
+
+msgid "Change Password"
+msgstr "Đổi mật khẩu"
+
+msgid "Change Email"
+msgstr "Đổi email"
+
+msgid "Support"
+msgstr "Hỗ trợ"
+
+msgid "Date"
+msgstr "Ngày"
+
+msgid "Views"
+msgstr "Lượt xem"
+
+msgid "Link Earnings"
+msgstr "Thu nhập từ link"
+
+msgid "Top 10 Links"
+msgstr "Top 10 link"
+
+msgid "Payment Method"
+msgstr "Phương thức thanh toán"
+
+msgid "My Wallet"
+msgstr "Ví của tôi"
+
+msgid "Web Money"
+msgstr "Web Money"
+
+msgid "Bank Transfer"
+msgstr "Chuyển khoản ngân hàng"
+
+msgid "Pay Campaign"
+msgstr "Thanh toán chiến dịch"
+
+msgid "Billing Address"
+msgstr "Địa chỉ thanh toán"
+
+msgid "First Name"
+msgstr "Tên"
+
+msgid "Last Name"
+msgstr "Họ"
+
+msgid "Address 1"
+msgstr "Địa chỉ 1"
+
+msgid "Address 2"
+msgstr "Địa chỉ 2"
+
+msgid "City"
+msgstr "Thành phố"
+
+msgid "State"
+msgstr "Tỉnh/Bang"
+
+msgid "ZIP"
+msgstr "Mã bưu điện"
+
+msgid "Country"
+msgstr "Quốc gia"
+
+msgid "Choose"
+msgstr "Chọn"
+
+msgid "Phone Number"
+msgstr "Số điện thoại"
+
+msgid "Withdrawal Info"
+msgstr "Thông tin rút tiền"
+
+msgid "PayPal"
+msgstr "PayPal"
+
+msgid "Payza"
+msgstr "Payza"
+
+msgid "Skrill"
+msgstr "Skrill"
+
+msgid "Bitcoin"
+msgstr "Bitcoin"
+
+msgid "Withdrawal Method"
+msgstr "Phương thức rút tiền"
+
+msgid "Withdrawal Account"
+msgstr "Tài khoản nhận tiền"
+
+msgid "- For PayPal, Payza and Skrill add your email."
+msgstr "- Với PayPal, Payza và Skrill: thêm email của bạn."
+
+msgid "- For Coinbase add your wallet address."
+msgstr "- Với Coinbase: thêm địa chỉ ví của bạn."
+
+msgid "- For Web Money add your purse."
+msgstr "- Với Web Money: thêm ví của bạn."
+
+msgid "- For bank transfer add your account holder name, Bank Name, City/Town, Country, Account number, SWIFT, IBAN and Account currency"
+msgstr "- Với chuyển khoản ngân hàng: thêm tên chủ tài khoản, Tên ngân hàng, Thành phố, Quốc gia, Số tài khoản, SWIFT, IBAN và Loại tiền tệ"
+
+msgid "My Referrals"
+msgstr "Người được tôi giới thiệu"
+
+msgid "Username"
+msgstr "Tên đăng nhập"
+
+msgid "Your API token:"
+msgstr "API token của bạn:"
+
+msgid "Filter"
+msgstr "Lọc"
+
+msgid "Reset"
+msgstr "Đặt lại"
+
+msgid "Alias"
+msgstr "Bí danh"
+
+msgid "Advertising Type"
+msgstr "Loại quảng cáo"
+
+msgid "Title, Desc. or URL"
+msgstr "Tiêu đề, Mô tả hoặc URL"
+
+msgid "Stats"
+msgstr "Thống kê"
+
+msgid "Hide"
+msgstr "Ẩn"
+
+msgid "Are you sure?"
+msgstr "Bạn có chắc chắn?"
+
+msgid "Current Email"
+msgstr "Email hiện tại"
+
+msgid "New Email"
+msgstr "Email mới"
+
+msgid "Re-enter New Email"
+msgstr "Nhập lại email mới"
+
+msgid "Withdraw Funds"
+msgstr "Rút tiền"
+
+msgid "Approved"
+msgstr "Đã duyệt"
+
+msgid "Complete"
+msgstr "Hoàn tất"
+
+msgid "Available Balance"
+msgstr "Số dư khả dụng"
+
+msgid "Pending Withdrawn"
+msgstr "Đang chờ rút"
+
+msgid "Tolal Withdrawn"
+msgstr "Tổng đã rút"
+
+msgid "Id"
+msgstr "Mã"
+
+msgid "Status"
+msgstr "Trạng thái"
+
+msgid "Publisher Earnings"
+msgstr "Thu nhập publisher"
+
+msgid "Amount"
+msgstr "Số tiền"
+
+msgid "Method"
+msgstr "Phương thức"
+
+msgid "Manage Campaigns"
+msgstr "Quản lý chiến dịch"
+
+msgid "Paused"
+msgstr "Tạm dừng"
+
+msgid "Canceled"
+msgstr "Đã hủy"
+
+msgid "Finished"
+msgstr "Đã kết thúc"
+
+msgid "Under Review"
+msgstr "Đang xem xét"
+
+msgid "Pending Payment"
+msgstr "Chờ thanh toán"
+
+msgid "Invalid Payment"
+msgstr "Thanh toán không hợp lệ"
+
+msgid "Refunded"
+msgstr "Đã hoàn tiền"
+
+msgid "Campaign Type"
+msgstr "Loại chiến dịch"
+
+msgid "Name"
+msgstr "Tên"
+
+msgid "website title, url, banner name,.."
+msgstr "tiêu đề website, url, tên banner,..."
+
+msgid "Long URL"
+msgstr "URL gốc"
+
+msgid "Title"
+msgstr "Tiêu đề"
+
+msgid "Description"
+msgstr "Mô tả"
+
+msgid "Edit Link: {0}"
+msgstr "Sửa link: {0}"
+
+msgid "Copyright &copy;"
+msgstr "Bản quyền &copy;"
+
+msgid "Popup"
+msgstr "Popup"
+
+msgid "Interstitial"
+msgstr "Interstitial"
+
+msgid "Banner"
+msgstr "Banner"
+
+msgid "No Advert"
+msgstr "Không quảng cáo"
+
+msgid "Campaign Name"
+msgstr "Tên chiến dịch"
+
+msgid "Website Details"
+msgstr "Thông tin website"
+
+msgid "URL"
+msgstr "URL"
+
+msgid "Advertising Rates"
+msgstr "Bảng giá quảng cáo"
+
+msgid "Price / 1,000"
+msgstr "Giá / 1.000"
+
+msgid "Purchase"
+msgstr "Mua"
+
+msgid "Traffic Sources"
+msgstr "Nguồn traffic"
+
+msgid "Desktop and Mobile"
+msgstr "Máy tính và di động"
+
+msgid "Desktop"
+msgstr "Máy tính"
+
+msgid "Mobile"
+msgstr "Di động"
+
+msgid "Campaign #{0}"
+msgstr "Chiến dịch #{0}"
+
+msgid "Note"
+msgstr "Ghi chú"
+
+msgid "Copied!"
+msgstr "Đã sao chép!"
+
+msgid "Reference"
+msgstr "Mã tham chiếu"
+
+msgid "Visitors/Total"
+msgstr "Lượt truy cập/Tổng"
+
+msgid "Created"
+msgstr "Ngày tạo"
+
+msgid "Actions"
+msgstr "Thao tác"
+
+msgid "View"
+msgstr "Xem"
+
+msgid "Pay"
+msgstr "Thanh toán"
+
+msgid "Pause"
+msgstr "Tạm dừng"
+
+msgid "Resume"
+msgstr "Tiếp tục"
+
+msgid "Price"
+msgstr "Giá"
+
+msgid "Inactive Links"
+msgstr "Link không hoạt động"
+
+msgid "Ads"
+msgstr "Quảng cáo"
+
+msgid "Add"
+msgstr "Thêm"
+
+msgid "Posts List"
+msgstr "Danh sách bài viết"
+
+msgid "Add Post"
+msgstr "Thêm bài viết"
+
+msgid "Social Login"
+msgstr "Đăng nhập mạng xã hội"
+
+msgid "Version"
+msgstr "Phiên bản"
+
+msgid "Complete Upgrade Process"
+msgstr "Hoàn tất nâng cấp"
+
+msgid "Get Code"
+msgstr "Lấy mã"
+
+msgid "News"
+msgstr "Tin tức"
+
+msgid "Homepage"
+msgstr "Trang chủ"
+
+msgid "Privacy Policy"
+msgstr "Chính sách bảo mật"
+
+msgid "Terms of Use"
+msgstr "Điều khoản sử dụng"
+
+msgid "Please find our advertising rate table below. Each visitor you will purchase will meet the following criteria:"
+msgstr "Vui lòng xem bảng giá quảng cáo bên dưới. Mỗi lượt truy cập bạn mua sẽ đáp ứng các tiêu chí sau:"
+
+msgid "Unique within a 24 hour time frame"
+msgstr "Duy nhất trong khung thời gian 24 giờ"
+
+msgid "They will have JavaScript enabled"
+msgstr "Họ sẽ bật JavaScript"
+
+msgid "They will have Cookies enabled"
+msgstr "Họ sẽ bật Cookies"
+
+msgid "Must view your website for at least {0} seconds"
+msgstr "Phải xem website của bạn ít nhất {0} giây"
+
+msgid "You may receive traffic that does not meet this criteria, but you will never be charged for it."
+msgstr "Bạn có thể nhận traffic không đáp ứng tiêu chí này, nhưng bạn sẽ không bị tính phí."
+
+msgid "I agree to the <a href=\"{0}\" target=\"_blank\">terms and conditions</a>"
+msgstr "Tôi đồng ý với <a href=\"{0}\" target=\"_blank\">điều khoản và điều kiện</a>"
+
+msgid "You have ordered {0} visitors for a total of {1}"
+msgstr "Bạn đã đặt {0} lượt truy cập với tổng cộng {1}"
+
+msgid "When your account reaches the minimum amount of {0} or more, you may request your earnings by clicking the above button. The payment is then sent to your PayPal account during business days no longer than 4 days after requesting. Please do not contact us regarding payments before due dates."
+msgstr "Khi tài khoản đạt số tiền tối thiểu {0} trở lên, bạn có thể yêu cầu rút thu nhập bằng cách nhấn nút trên. Thanh toán sẽ được gửi đến tài khoản PayPal của bạn trong ngày làm việc, không quá 4 ngày sau khi yêu cầu. Vui lòng không liên hệ về thanh toán trước ngày đến hạn."
+
+msgid "In order to receive your payments you need to fill your payment method and payment ID <a href=\"{0}\">here</a> if you haven't done so. You are also requested to fill all the required fields in the Account Details section with accurate data."
+msgstr "Để nhận thanh toán, bạn cần điền phương thức thanh toán và ID thanh toán <a href=\"{0}\">tại đây</a> nếu chưa làm. Bạn cũng cần điền đầy đủ các trường bắt buộc trong phần Thông tin tài khoản với dữ liệu chính xác."
+
+msgid "Pending: The payment is being checked by our team."
+msgstr "Đang chờ: Thanh toán đang được đội ngũ kiểm tra."
+
+msgid "Approved: The payment has been approved and is waiting to be sent."
+msgstr "Đã duyệt: Thanh toán đã được phê duyệt và đang chờ gửi."
+
+msgid "Complete: The payment has been successfully sent to your Paypal account."
+msgstr "Hoàn tất: Thanh toán đã được gửi thành công đến tài khoản PayPal của bạn."
+
+msgid "The {0} referral program is a great way to spread the word of this great service and to earn even more money with your short links! Refer friends and receive {1}% of their earnings for life!"
+msgstr "Chương trình giới thiệu {0} là cách tuyệt vời để lan truyền dịch vụ và kiếm thêm thu nhập từ link rút gọn! Giới thiệu bạn bè và nhận {1}% thu nhập của họ trọn đời!"
+
+msgid "Everyone can use the shortest way to shorten links with {0}."
+msgstr "Mọi người đều có thể dùng cách ngắn nhất để rút gọn link với {0}."
+
+msgid "Just copy the link below to address bar into your web browser, change last part to destination link and press ENTER. {0} will redirect you to your shortened link. Copy it wherever you want and get paid."
+msgstr "Chỉ cần sao chép link dưới đây vào thanh địa chỉ trình duyệt, thay phần cuối bằng link đích và nhấn ENTER. {0} sẽ chuyển hướng đến link rút gọn của bạn. Sao chép và kiếm tiền."
+
+msgid "If you want to use Quick Link with the interstitial advertising add the below code to the end of the URL"
+msgstr "Nếu muốn dùng Quick Link với quảng cáo interstitial, thêm đoạn sau vào cuối URL"
+
+msgid "If you want to use Quick Link with the banner advertising add the below code to the end of the URL"
+msgstr "Nếu muốn dùng Quick Link với quảng cáo banner, thêm đoạn sau vào cuối URL"
+
+msgid "If you want to use Quick Link without advertising add the below code to the end of the URL"
+msgstr "Nếu muốn dùng Quick Link không quảng cáo, thêm đoạn sau vào cuối URL"
+
+msgid "For developers {0} prepared <b>API</b> which returns responses in <b>JSON</b> or <b>TEXT</b> formats. "
+msgstr "Cho nhà phát triển, {0} cung cấp <b>API</b> trả về phản hồi dạng <b>JSON</b> hoặc <b>TEXT</b>."
+
+msgid "Currently there is one method which can be used to shorten links on behalf of your account."
+msgstr "Hiện có một phương thức để rút gọn link thay mặt tài khoản của bạn."
+
+msgid "All you have to do is to send a <b>GET</b> request with your API token and URL Like the following:"
+msgstr "Bạn chỉ cần gửi yêu cầu <b>GET</b> với API token và URL như sau:"
+
+msgid "You will get a JSON reposnse like the following"
+msgstr "Bạn sẽ nhận phản hồi JSON như sau"
+
+msgid "If you want a TEXT reposnse just add <b>&format=text</b> at the end of your request as the below example. This will return just the short link. Note that if an error occurs, it will not output anything."
+msgstr "Nếu muốn phản hồi TEXT, thêm <b>&format=text</b> vào cuối yêu cầu như ví dụ dưới. Sẽ chỉ trả về link ngắn. Lưu ý nếu có lỗi sẽ không xuất gì."
+
+msgid "If you want to use developers API with the interstitial advertising add the below code to the end of the URL"
+msgstr "Nếu muốn dùng API với quảng cáo interstitial, thêm đoạn sau vào cuối URL"
+
+msgid "If you want to use developers API with the banner advertising add the below code to the end of the URL"
+msgstr "Nếu muốn dùng API với quảng cáo banner, thêm đoạn sau vào cuối URL"
+
+msgid "If you want to use developers API without advertising add the below code to the end of the URL"
+msgstr "Nếu muốn dùng API không quảng cáo, thêm đoạn sau vào cuối URL"
+
+msgid "api & url are required fields and the other fields like alias, format & type are optional."
+msgstr "api và url là bắt buộc, các trường khác như alias, format và type là tùy chọn."
+
+msgid "That's it :)"
+msgstr "Chỉ vậy thôi :)"
+
+msgid "Using the API in PHP"
+msgstr "Sử dụng API trong PHP"
+
+msgid "To use the API in your PHP application, you need to send a GET request via file_get_contents or cURL. Please check the below sample examples using file_get_contents"
+msgstr "Để dùng API trong ứng dụng PHP, bạn cần gửi yêu cầu GET qua file_get_contents hoặc cURL. Xem ví dụ mẫu dùng file_get_contents bên dưới"
+
+msgid "Using JSON Response"
+msgstr "Dùng phản hồi JSON"
+
+msgid "Using Plain Text Response"
+msgstr "Dùng phản hồi văn bản thuần"
+
+msgid "Your URL Here"
+msgstr "Dán URL của bạn vào đây"
+
+msgid "Domain"
+msgstr "Tên miền"
+
+msgid "Advanced Options"
+msgstr "Tùy chọn nâng cao"
+
+msgid "Your Name *"
+msgstr "Tên của bạn *"
+
+msgid "Your Email *"
+msgstr "Email của bạn *"
+
+msgid "Your Subject *"
+msgstr "Chủ đề *"
+
+msgid "Your Message *"
+msgstr "Nội dung tin nhắn *"
+
+msgid "Send Message"
+msgstr "Gửi tin nhắn"
+
+msgid "Terms and Conditions"
+msgstr "Điều khoản và điều kiện"
+
+msgid "Register"
+msgstr "Đăng ký"
+
+msgid "seconds"
+msgstr "giây"
+
+msgid "A new tab has been opened. You will be redirected shortly."
+msgstr "Một tab mới đã được mở. Bạn sẽ được chuyển hướng trong giây lát."
+
+msgid "Please wait"
+msgstr "Vui lòng đợi"
+
+msgid "Your code"
+msgstr "Mã của bạn"
+
+msgid "Copy this code and paste it on the previous page to continue."
+msgstr "Sao chép mã này và dán vào trang trước để tiếp tục."
+
+msgid "Please click the button below and wait for the code"
+msgstr "Vui lòng nhấn nút bên dưới và chờ mã hiển thị"
+
+msgid "Or find the LẤY MÃ button on the website above and click it."
+msgstr "Hoặc tìm nút LẤY MÃ trên trang web phía trên và nhấn vào."
+
+msgid "LẤY MÃ"
+msgstr "LẤY MÃ"
+
+msgid "Your Code"
+msgstr "Mã của bạn"
+
+msgid "Copy the code below and enter it on the previous page to continue."
+msgstr "Sao chép mã bên dưới và nhập vào trang trước để tiếp tục."
+
+msgid "This code will expire when your session ends."
+msgstr "Mã này sẽ hết hạn khi phiên của bạn kết thúc."
+
+msgid "PLEASE ENTER CODE TO CONTINUE TO DESTINATION PAGE"
+msgstr "VUI LÒNG NHẬP MÃ ĐỂ TIẾP TỤC ĐẾN TRANG ĐÍCH"
+
+msgid "Enter code"
+msgstr "Nhập mã"
+
+msgid "Session time remaining"
+msgstr "Thời gian phiên còn lại"
+
+msgid "Click here to continue"
+msgstr "Nhấn vào đây để tiếp tục"
+
+msgid "Use Chrome browser to avoid errors"
+msgstr "Dùng trình duyệt Chrome để tránh lỗi"
+
+msgid "DO NOT Click on Sponsored ads"
+msgstr "KHÔNG nhấn vào quảng cáo tài trợ"
+
+msgid "DO NOT use Incognito browser"
+msgstr "KHÔNG dùng chế độ ẩn danh"
+
+msgid "Step 1: Open a new tab, go to google.com"
+msgstr "Bước 1: Mở tab mới, truy cập google.com"
+
+msgid "Step 2: Type the search keyword"
+msgstr "Bước 2: Gõ từ khóa tìm kiếm"
+
+msgid "Step 3: Click on the website"
+msgstr "Bước 3: Nhấn vào website"
+
+msgid "on page 1"
+msgstr "ở trang 1"
+
+msgid "Step 4: Scroll to the end of the article, click the LẤY MÃ button as shown below and wait"
+msgstr "Bước 4: Cuộn đến cuối bài viết, nhấn nút LẤY MÃ như hình bên dưới và chờ"
+
+msgid "Step 5: Then click any link on the website and return to that position to get the code"
+msgstr "Bước 5: Sau đó nhấn bất kỳ link nào trên website và quay lại vị trí đó để lấy mã"
+
+msgid "Step 6: Paste the code here to go to the destination page"
+msgstr "Bước 6: Dán mã vào đây để đến trang đích"
+
+msgid "Click to open the page"
+msgstr "Nhấn để mở trang"
+
+msgid "Session expired. Please refresh the page."
+msgstr "Phiên đã hết hạn. Vui lòng tải lại trang."
+
+msgid "Session expired. Please go back to the link and try again."
+msgstr "Phiên đã hết hạn. Vui lòng quay lại link và thử lại."
+
+msgid "Please enter the code."
+msgstr "Vui lòng nhập mã."
+
+msgid "Please complete the captcha to enable the continue button."
+msgstr "Vui lòng hoàn thành captcha để kích hoạt nút tiếp tục."
+
+msgid "Please complete the reCAPTCHA verification."
+msgstr "Vui lòng hoàn thành xác minh reCAPTCHA."
+
+msgid "Checking..."
+msgstr "Đang kiểm tra..."
+
+msgid "Invalid code. Please try again."
+msgstr "Mã không hợp lệ. Vui lòng thử lại."
+
+msgid "An error occurred. Please try again."
+msgstr "Đã xảy ra lỗi. Vui lòng thử lại."
+
+msgid "Popup Advertisement Price"
+msgstr "Giá quảng cáo Popup"
+
+msgid "Interstitial Advertisement Price"
+msgstr "Giá quảng cáo Interstitial"
+
+msgid "Banner Advertisement Price"
+msgstr "Giá quảng cáo Banner"
+
+msgid "Keyword Tasks"
+msgstr "Nhiệm vụ từ khóa"
+
+msgid "Keyword"
+msgstr "Từ khóa"
+
+msgid "Target URL"
+msgstr "URL mục tiêu"
+
+msgid "Target Website URL"
+msgstr "URL website mục tiêu"
+
+msgid "Ad Code (optional)"
+msgstr "Mã quảng cáo (tùy chọn)"
+
+msgid "Add Keyword Task"
+msgstr "Thêm nhiệm vụ từ khóa"
+
+msgid "Edit Keyword Task"
+msgstr "Sửa nhiệm vụ từ khóa"
+
+msgid "Keyword task has been added."
+msgstr "Nhiệm vụ từ khóa đã được thêm."
+
+msgid "Keyword task has been updated."
+msgstr "Nhiệm vụ từ khóa đã được cập nhật."
+
+msgid "Keyword task has been deleted."
+msgstr "Nhiệm vụ từ khóa đã được xóa."
+
+msgid "Unable to delete keyword task."
+msgstr "Không thể xóa nhiệm vụ từ khóa."
+
+msgid "Invalid keyword task"
+msgstr "Nhiệm vụ từ khóa không hợp lệ"
+
+msgid "Order"
+msgstr "Thứ tự"
+
+msgid "Active"
+msgstr "Hoạt động"
+
+msgid "Inactive"
+msgstr "Không hoạt động"
+
+msgid "Delete"
+msgstr "Xóa"
+
+msgid "Adsterra Integration"
+msgstr "Tích hợp Adsterra"
+
+msgid "Social Bar Script"
+msgstr "Script Social Bar"
+
+msgid "Popunder Script"
+msgstr "Script Popunder"
+
+msgid "Direct Link Script"
+msgstr "Script Direct Link"
+
+msgid "Shown on banner/interstitial/captcha pages."
+msgstr "Hiển thị trên trang banner/interstitial/captcha."
+
+msgid "Triggered when user clicks Continue button."
+msgstr "Kích hoạt khi người dùng nhấn nút Tiếp tục."
+
+msgid "Alternative to Final Ad URL - use script instead of redirect."
+msgstr "Thay thế cho Final Ad URL - dùng script thay vì redirect."
+
+msgid "Insert Adsterra scripts (Social Bar, Popunder, Direct Link) into ad interaction pages to optimize eCPM."
+msgstr "Chèn script Adsterra (Social Bar, Popunder, Direct Link) vào trang tương tác quảng cáo để tối ưu eCPM."
+
+msgid "List"
+msgstr "Danh sách"
+
+msgid "Traffic Source"
+msgstr "Nguồn traffic"
+
+msgid "KYC Status"
+msgstr "Trạng thái KYC"
+
+msgid "Main traffic source"
+msgstr "Nguồn traffic chính"
+
+msgid "Fraud Report by IP"
+msgstr "Báo cáo gian lận theo IP"
+
+msgid "Referer Ratio"
+msgstr "Tỉ lệ Referer"
+
+msgid "Reject"
+msgstr "Từ chối"
+
+msgid "Withdrawal has been rejected."
+msgstr "Yêu cầu rút tiền đã bị từ chối."
+
+msgid "Google Search"
+msgstr "Tìm kiếm Google"
+
+msgid "Facebook"
+msgstr "Facebook"
+
+msgid "YouTube"
+msgstr "YouTube"
+
+msgid "Direct / Bookmark"
+msgstr "Truy cập trực tiếp / Đánh dấu"
+
+msgid "Other"
+msgstr "Khác"
+
+msgid "Not set"
+msgstr "Chưa đặt"
+
+msgid "Google"
+msgstr "Google"
+
+msgid "Direct"
+msgstr "Trực tiếp"
+
+msgid "Top Referers"
+msgstr "Referer hàng đầu"
+
+msgid "No data yet."
+msgstr "Chưa có dữ liệu."
+
+msgid "Report shows IPs with paid views. Referer ratio indicates traffic source: Google Search vs Direct vs other."
+msgstr "Báo cáo hiển thị IP có lượt xem được trả tiền. Tỉ lệ Referer cho biết nguồn traffic: Google Search vs Trực tiếp vs khác."
+
+msgid "Provider"
+msgstr "Nhà cung cấp"
+
+msgid "IPinfo.io fallback: requires token from <a href=\"https://ipinfo.io\" target=\"_blank\">ipinfo.io</a>. Use \"org\" keyword detection or Privacy API (paid)."
+msgstr "IPinfo.io dự phòng: cần token từ <a href=\"https://ipinfo.io\" target=\"_blank\">ipinfo.io</a>. Dùng phát hiện từ khóa \"org\" hoặc Privacy API (trả phí)."
+
+msgid "IPinfo Token"
+msgstr "Token IPinfo"
+
+msgid "Required when Provider = IPinfo.io"
+msgstr "Bắt buộc khi Nhà cung cấp = IPinfo.io"
+
+msgid "Token-based Redirect"
+msgstr "Chuyển hướng bằng token"
+
+msgid "Hide redirect URL from extensions. Uses one-time token."
+msgstr "Ẩn URL chuyển hướng khỏi extension. Dùng token dùng một lần."
+
+msgid "Redirect Delay (seconds)"
+msgstr "Độ trễ chuyển hướng (giây)"
+
+msgid "Min"
+msgstr "Tối thiểu"
+
+msgid "Max"
+msgstr "Tối đa"
+
+msgid "Random delay before redirect (anti-automation)."
+msgstr "Độ trễ ngẫu nhiên trước khi chuyển hướng (chống tự động)."
+
+msgid "Invalid referrer. Please use the link from our site."
+msgstr "Referrer không hợp lệ. Vui lòng sử dụng liên kết từ trang của chúng tôi."
+
+msgid "Saving ..."
+msgstr "Đang lưu ..."
+
+msgid "Links"
+msgstr "Liên kết"
+
+msgid "Integration"
+msgstr "Tích hợp"
+
+msgid "Captcha"
+msgstr "Captcha"
+
+msgid "Payment"
+msgstr "Thanh toán"
+
+msgid "Social Media"
+msgstr "Mạng xã hội"
+
+msgid "Captcha Ad"
+msgstr "Quảng cáo Captcha"
+
+msgid "Payment Business Email"
+msgstr "Email thanh toán doanh nghiệp"
+
+msgid "Getting link..."
+msgstr "Đang lấy liên kết..."

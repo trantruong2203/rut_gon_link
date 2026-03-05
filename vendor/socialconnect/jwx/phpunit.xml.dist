@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<phpunit
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    backupGlobals="false"
+    backupStaticAttributes="false"
+    colors="true"
+    convertErrorsToExceptions="true"
+    convertNoticesToExceptions="true"
+    convertWarningsToExceptions="true"
+    processIsolation="false"
+    stopOnFailure="false"
+    bootstrap="./vendor/autoload.php"
+    xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd"
+>
+    <coverage>
+        <include>
+            <directory>./src</directory>
+        </include>
+        <exclude>
+            <directory>./src/Exception</directory>
+            <directory>./vendor/</directory>
+            <file>./vendor/autoload.php</file>
+        </exclude>
+        <report>
+            <clover outputFile="build/logs/clover.xml" />
+            <html outputDirectory="build/html" />
+            <text outputFile="php://stdout" showUncoveredFiles="false" />
+        </report>
+    </coverage>
+    <testsuites>
+        <testsuite name="Tests">
+            <directory>./tests/</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>

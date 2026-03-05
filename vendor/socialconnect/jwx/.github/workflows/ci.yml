@@ -1,0 +1,39 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  testsuite:
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        php-version: ['8.0', '8.5']
+        composer-opts: ['']
+        include:
+          - php-version: '7.4'
+            composer-opts: '--prefer-lowest'
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: ${{ matrix.php-version }}
+        coverage: xdebug
+
+    - name: Composer install
+      run: composer update ${{ matrix.composer-opts }}
+    - name: Run PHPUnit
+      run: |
+        if [[ ${{ matrix.php-version }} == '7.4' ]]; then
+          vendor/bin/phpunit -v --debug --coverage-clover=coverage.clover
+        else
+          vendor/bin/phpunit --no-coverage
+        fi
+    - name: Code Coverage Report
+      if: matrix.php-version == '7.4'
+      run: |
+        wget https://scrutinizer-ci.com/ocular.phar
+        php ocular.phar code-coverage:upload --format=php-clover coverage.clover;

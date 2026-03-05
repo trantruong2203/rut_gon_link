@@ -1,0 +1,179 @@
+2026-02-23 16:21:58 Error: [ArgumentCountError] array_merge() does not accept unknown named parameters
+Stack Trace:
+#0 [internal function]: array_merge(C:\xampp\htdocs\project\src\Shell\ConsoleShell.php: Array)
+#1 C:\xampp\htdocs\project\vendor\cakephp\cakephp\src\Filesystem\Folder.php(247): call_user_func_array('array_merge', Array)
+#2 C:\xampp\htdocs\project\vendor\cakephp\cakephp\src\Shell\Task\CommandTask.php(90): Cake\Filesystem\Folder->read(true, true)
+#3 C:\xampp\htdocs\project\vendor\cakephp\cakephp\src\Shell\Task\CommandTask.php(46): Cake\Shell\Task\CommandTask->_scanDir(Object(Cake\Filesystem\Folder))
+#4 C:\xampp\htdocs\project\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(245): Cake\Shell\Task\CommandTask->getShellList()
+#5 C:\xampp\htdocs\project\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(63): Cake\Console\ShellDispatcher->addShortPluginAliases()
+#6 C:\xampp\htdocs\project\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(126): Cake\Console\ShellDispatcher->__construct(Array)
+#7 C:\xampp\htdocs\project\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#8 {main}
+
+
+2026-02-26 16:40:11 Warning: Warning (512): SplFileInfo::openFile(C:\xampp\htdocs\project\tmp\cache\models/\myapp_cake_model_default_options): Failed to open stream: Permission denied in [C:\xampp\htdocs\project\vendor\cakephp\cakephp\src\Cache\Engine\FileEngine.php, line 421]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Cache\Engine\FileEngine::_setKey() - CORE\src\Cache\Engine\FileEngine.php, line 421
+Cake\Cache\Engine\FileEngine::write() - CORE\src\Cache\Engine\FileEngine.php, line 134
+Cake\Cache\SimpleCacheEngine::set() - CORE\src\Cache\SimpleCacheEngine.php, line 118
+Cake\Cache\Cache::write() - CORE\src\Cache\Cache.php, line 297
+Cake\Database\Schema\CachedCollection::describe() - CORE\src\Database\Schema\CachedCollection.php, line 64
+Cake\ORM\Table::getSchema() - CORE\src\ORM\Table.php, line 566
+Cake\ORM\Query::addDefaultTypes() - CORE\src\ORM\Query.php, line 267
+Cake\ORM\Query::__construct() - CORE\src\ORM\Query.php, line 167
+Cake\ORM\Table::query() - CORE\src\ORM\Table.php, line 1809
+Cake\ORM\Table::find() - CORE\src\ORM\Table.php, line 1392
+get_option - ROOT\config\functions.php, line 49
+include - ROOT\config\app_config.php, line 44
+require - ROOT\config\bootstrap.php, line 171
+[main] - ROOT\fix_domain_local.php, line 11
+
+
+
+2026-02-26 16:40:11 Warning: Warning (512): _cake_model_ cache was unable to write 'default_options' to Cake\Cache\SimpleCacheEngine cache in [C:\xampp\htdocs\project\vendor\cakephp\cakephp\src\Cache\Cache.php, line 299]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Cache\Cache::write() - CORE\src\Cache\Cache.php, line 299
+Cake\Database\Schema\CachedCollection::describe() - CORE\src\Database\Schema\CachedCollection.php, line 64
+Cake\ORM\Table::getSchema() - CORE\src\ORM\Table.php, line 566
+Cake\ORM\Query::addDefaultTypes() - CORE\src\ORM\Query.php, line 267
+Cake\ORM\Query::__construct() - CORE\src\ORM\Query.php, line 167
+Cake\ORM\Table::query() - CORE\src\ORM\Table.php, line 1809
+Cake\ORM\Table::find() - CORE\src\ORM\Table.php, line 1392
+get_option - ROOT\config\functions.php, line 49
+include - ROOT\config\app_config.php, line 44
+require - ROOT\config\bootstrap.php, line 171
+[main] - ROOT\fix_domain_local.php, line 11
+
+
+
+2026-02-26 16:40:37 Warning: Warning (512): SplFileInfo::openFile(C:\xampp\htdocs\project\tmp\cache\models/\myapp_cake_model_default_options): Failed to open stream: Permission denied in [C:\xampp\htdocs\project\vendor\cakephp\cakephp\src\Cache\Engine\FileEngine.php, line 421]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Cache\Engine\FileEngine::_setKey() - CORE\src\Cache\Engine\FileEngine.php, line 421
+Cake\Cache\Engine\FileEngine::write() - CORE\src\Cache\Engine\FileEngine.php, line 134
+Cake\Cache\SimpleCacheEngine::set() - CORE\src\Cache\SimpleCacheEngine.php, line 118
+Cake\Cache\Cache::write() - CORE\src\Cache\Cache.php, line 297
+Cake\Database\Schema\CachedCollection::describe() - CORE\src\Database\Schema\CachedCollection.php, line 64
+Cake\ORM\Table::getSchema() - CORE\src\ORM\Table.php, line 566
+Cake\ORM\Query::addDefaultTypes() - CORE\src\ORM\Query.php, line 267
+Cake\ORM\Query::__construct() - CORE\src\ORM\Query.php, line 167
+Cake\ORM\Table::query() - CORE\src\ORM\Table.php, line 1809
+Cake\ORM\Table::find() - CORE\src\ORM\Table.php, line 1392
+get_option - ROOT\config\functions.php, line 49
+include - ROOT\config\app_config.php, line 44
+require - ROOT\config\bootstrap.php, line 171
+[main] - ROOT\fix_domain_local.php, line 11
+
+
+
+2026-02-26 16:40:37 Warning: Warning (512): _cake_model_ cache was unable to write 'default_options' to Cake\Cache\SimpleCacheEngine cache in [C:\xampp\htdocs\project\vendor\cakephp\cakephp\src\Cache\Cache.php, line 299]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Cache\Cache::write() - CORE\src\Cache\Cache.php, line 299
+Cake\Database\Schema\CachedCollection::describe() - CORE\src\Database\Schema\CachedCollection.php, line 64
+Cake\ORM\Table::getSchema() - CORE\src\ORM\Table.php, line 566
+Cake\ORM\Query::addDefaultTypes() - CORE\src\ORM\Query.php, line 267
+Cake\ORM\Query::__construct() - CORE\src\ORM\Query.php, line 167
+Cake\ORM\Table::query() - CORE\src\ORM\Table.php, line 1809
+Cake\ORM\Table::find() - CORE\src\ORM\Table.php, line 1392
+get_option - ROOT\config\functions.php, line 49
+include - ROOT\config\app_config.php, line 44
+require - ROOT\config\bootstrap.php, line 171
+[main] - ROOT\fix_domain_local.php, line 11
+
+
+
+2026-03-04 01:36:50 Error: [PDOException] SQLSTATE[42S02]: Base table or view not found: 1932 Table 'shorten_db.phinxlog' doesn't exist in engine in C:\xampp\htdocs\project\vendor\robmorgan\phinx\src\Phinx\Db\Adapter\PdoAdapter.php on line 212
+Stack Trace:
+#0 C:\xampp\htdocs\project\vendor\robmorgan\phinx\src\Phinx\Db\Adapter\PdoAdapter.php(212): PDO->query('SHOW COLUMNS FR...')
+#1 C:\xampp\htdocs\project\vendor\robmorgan\phinx\src\Phinx\Db\Adapter\PdoAdapter.php(231): Phinx\Db\Adapter\PdoAdapter->query('SHOW COLUMNS FR...')
+#2 C:\xampp\htdocs\project\vendor\robmorgan\phinx\src\Phinx\Db\Adapter\MysqlAdapter.php(437): Phinx\Db\Adapter\PdoAdapter->fetchAll('SHOW COLUMNS FR...')
+#3 C:\xampp\htdocs\project\vendor\robmorgan\phinx\src\Phinx\Db\Table.php(378): Phinx\Db\Adapter\MysqlAdapter->hasColumn('phinxlog', 'migration_name')
+#4 C:\xampp\htdocs\project\vendor\robmorgan\phinx\src\Phinx\Db\Adapter\PdoAdapter.php(121): Phinx\Db\Table->hasColumn('migration_name')
+#5 C:\xampp\htdocs\project\vendor\robmorgan\phinx\src\Phinx\Db\Adapter\MysqlAdapter.php(118): Phinx\Db\Adapter\PdoAdapter->setConnection(Object(PDO))
+#6 C:\xampp\htdocs\project\vendor\robmorgan\phinx\src\Phinx\Db\Adapter\PdoAdapter.php(148): Phinx\Db\Adapter\MysqlAdapter->connect()
+#7 C:\xampp\htdocs\project\vendor\robmorgan\phinx\src\Phinx\Db\Adapter\AdapterWrapper.php(496): Phinx\Db\Adapter\PdoAdapter->getConnection()
+#8 C:\xampp\htdocs\project\vendor\cakephp\migrations\src\CakeAdapter.php(56): Phinx\Db\Adapter\AdapterWrapper->getConnection()
+#9 C:\xampp\htdocs\project\vendor\cakephp\migrations\src\Command\CommandTrait.php(78): Migrations\CakeAdapter->__construct(Object(Phinx\Db\Adapter\TimedOutputAdapter), Object(Cake\Database\Connection))
+#10 C:\xampp\htdocs\project\vendor\robmorgan\phinx\src\Phinx\Console\Command\Migrate.php(63): Migrations\Command\Migrate->bootstrap(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#11 C:\xampp\htdocs\project\vendor\cakephp\migrations\src\Command\CommandTrait.php(35): Phinx\Console\Command\Migrate->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#12 C:\xampp\htdocs\project\vendor\cakephp\migrations\src\Command\Migrate.php(66): Migrations\Command\Migrate->parentExecute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#13 C:\xampp\htdocs\project\vendor\symfony\console\Command\Command.php(298): Migrations\Command\Migrate->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#14 C:\xampp\htdocs\project\vendor\symfony\console\Application.php(1040): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#15 C:\xampp\htdocs\project\vendor\symfony\console\Application.php(301): Symfony\Component\Console\Application->doRunCommand(Object(Migrations\Command\Migrate), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#16 C:\xampp\htdocs\project\vendor\symfony\console\Application.php(171): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#17 C:\xampp\htdocs\project\vendor\cakephp\migrations\src\Shell\MigrationsShell.php(108): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#18 C:\xampp\htdocs\project\vendor\cakephp\cakephp\src\Console\Shell.php(531): Migrations\Shell\MigrationsShell->main('migrations', 'migrate')
+#19 C:\xampp\htdocs\project\vendor\cakephp\migrations\src\Shell\MigrationsShell.php(169): Cake\Console\Shell->runCommand(Array, true, Array)
+#20 C:\xampp\htdocs\project\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(229): Migrations\Shell\MigrationsShell->runCommand(Array, true, Array)
+#21 C:\xampp\htdocs\project\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(181): Cake\Console\ShellDispatcher->_dispatch(Array)
+#22 C:\xampp\htdocs\project\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(127): Cake\Console\ShellDispatcher->dispatch(Array)
+#23 C:\xampp\htdocs\project\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#24 {main}
+
+
+2026-03-04 01:37:47 Error: [PDOException] SQLSTATE[42S02]: Base table or view not found: 1932 Table 'shorten_db.phinxlog' doesn't exist in engine in C:\xampp\htdocs\project\vendor\robmorgan\phinx\src\Phinx\Db\Adapter\PdoAdapter.php on line 212
+Stack Trace:
+#0 C:\xampp\htdocs\project\vendor\robmorgan\phinx\src\Phinx\Db\Adapter\PdoAdapter.php(212): PDO->query('SHOW COLUMNS FR...')
+#1 C:\xampp\htdocs\project\vendor\robmorgan\phinx\src\Phinx\Db\Adapter\PdoAdapter.php(231): Phinx\Db\Adapter\PdoAdapter->query('SHOW COLUMNS FR...')
+#2 C:\xampp\htdocs\project\vendor\robmorgan\phinx\src\Phinx\Db\Adapter\MysqlAdapter.php(437): Phinx\Db\Adapter\PdoAdapter->fetchAll('SHOW COLUMNS FR...')
+#3 C:\xampp\htdocs\project\vendor\robmorgan\phinx\src\Phinx\Db\Table.php(378): Phinx\Db\Adapter\MysqlAdapter->hasColumn('phinxlog', 'migration_name')
+#4 C:\xampp\htdocs\project\vendor\robmorgan\phinx\src\Phinx\Db\Adapter\PdoAdapter.php(121): Phinx\Db\Table->hasColumn('migration_name')
+#5 C:\xampp\htdocs\project\vendor\robmorgan\phinx\src\Phinx\Db\Adapter\MysqlAdapter.php(118): Phinx\Db\Adapter\PdoAdapter->setConnection(Object(PDO))
+#6 C:\xampp\htdocs\project\vendor\robmorgan\phinx\src\Phinx\Db\Adapter\PdoAdapter.php(148): Phinx\Db\Adapter\MysqlAdapter->connect()
+#7 C:\xampp\htdocs\project\vendor\robmorgan\phinx\src\Phinx\Db\Adapter\AdapterWrapper.php(496): Phinx\Db\Adapter\PdoAdapter->getConnection()
+#8 C:\xampp\htdocs\project\vendor\cakephp\migrations\src\CakeAdapter.php(56): Phinx\Db\Adapter\AdapterWrapper->getConnection()
+#9 C:\xampp\htdocs\project\vendor\cakephp\migrations\src\Command\CommandTrait.php(78): Migrations\CakeAdapter->__construct(Object(Phinx\Db\Adapter\TimedOutputAdapter), Object(Cake\Database\Connection))
+#10 C:\xampp\htdocs\project\vendor\robmorgan\phinx\src\Phinx\Console\Command\Migrate.php(63): Migrations\Command\Migrate->bootstrap(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#11 C:\xampp\htdocs\project\vendor\cakephp\migrations\src\Command\CommandTrait.php(35): Phinx\Console\Command\Migrate->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#12 C:\xampp\htdocs\project\vendor\cakephp\migrations\src\Command\Migrate.php(66): Migrations\Command\Migrate->parentExecute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#13 C:\xampp\htdocs\project\vendor\symfony\console\Command\Command.php(298): Migrations\Command\Migrate->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#14 C:\xampp\htdocs\project\vendor\symfony\console\Application.php(1040): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#15 C:\xampp\htdocs\project\vendor\symfony\console\Application.php(301): Symfony\Component\Console\Application->doRunCommand(Object(Migrations\Command\Migrate), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#16 C:\xampp\htdocs\project\vendor\symfony\console\Application.php(171): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#17 C:\xampp\htdocs\project\vendor\cakephp\migrations\src\Shell\MigrationsShell.php(108): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#18 C:\xampp\htdocs\project\vendor\cakephp\cakephp\src\Console\Shell.php(531): Migrations\Shell\MigrationsShell->main('migrations', 'migrate')
+#19 C:\xampp\htdocs\project\vendor\cakephp\migrations\src\Shell\MigrationsShell.php(169): Cake\Console\Shell->runCommand(Array, true, Array)
+#20 C:\xampp\htdocs\project\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(229): Migrations\Shell\MigrationsShell->runCommand(Array, true, Array)
+#21 C:\xampp\htdocs\project\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(181): Cake\Console\ShellDispatcher->_dispatch(Array)
+#22 C:\xampp\htdocs\project\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(127): Cake\Console\ShellDispatcher->dispatch(Array)
+#23 C:\xampp\htdocs\project\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#24 {main}
+
+
+2026-03-04 03:07:22 error: [Error] Call to undefined method Cake\Cache\Cache::config() in E:\project\config\app_config.php on line 8
+Stack Trace:
+- E:\project\config\bootstrap.php:141
+- E:\project\bin\cake.php:32
+- [main]:
+
+2026-03-04 03:07:34 warning: Version information cannot be generated from Shell classes anymore. Upgrade your application to use Cake\Console\CommandRunner instead.
+Trace:
+E:\project\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php E:\project\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php, line 418
+Cake\Console\ShellDispatcher->version() E:\project\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php, line 223
+Cake\Console\ShellDispatcher->_dispatch() E:\project\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php, line 181
+Cake\Console\ShellDispatcher->dispatch() E:\project\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php, line 131
+Cake\Console\ShellDispatcher::run() E:\project\bin\cake.php, line 34
+[main]
+
+2026-03-04 03:08:52 error: [Cake\Console\Exception\MissingShellException] Shell class for "Migrations" could not be found. If you are trying to use a plugin shell, that was loaded via $this->addPlugin(), you may need to update bin/cake.php to match https://github.com/cakephp/app/tree/master/bin/cake.php in E:\project\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php on line 328
+Exception Attributes: array (
+  'class' => 'Migrations',
+)
+Stack Trace:
+- E:\project\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php:228
+- E:\project\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php:181
+- E:\project\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php:131
+- E:\project\bin\cake.php:34
+- [main]:
+
+2026-03-04 03:11:31 error: [TypeError] Cake\Routing\RouteBuilder::__construct(): Argument #1 ($collection) must be of type Cake\Routing\RouteCollection, null given, called in E:\project\vendor\cakephp\cakephp\src\Routing\Router.php on line 797 in E:\project\vendor\cakephp\cakephp\src\Routing\RouteBuilder.php on line 130
+Stack Trace:
+- E:\project\vendor\cakephp\cakephp\src\Routing\Router.php:797
+- E:\project\vendor\cakephp\cakephp\src\Console\CommandRunner.php:395
+- E:\project\vendor\cakephp\cakephp\src\Console\CommandRunner.php:147
+- E:\project\bin\cake.php:36
+- [main]:
+
