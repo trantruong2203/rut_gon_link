@@ -6,10 +6,11 @@ use Cake\Mailer\Mailer;
 
 class UserMailer extends Mailer
 {
+    protected $messageClass = AppEmail::class;
+
     public function __construct()
     {
         parent::__construct();
-        $this->email = new AppEmail();
     }
 
     public function activation($user)
