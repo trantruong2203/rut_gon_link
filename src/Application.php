@@ -72,12 +72,23 @@ class Application extends \Cake\Http\BaseApplication
                 'httponly' => true,
             ]))->skipCheckCallback(function ($request) {
                 $path = $request->getPath();
+
+                // Bỏ qua CSRF cho trình cài đặt
                 if (strpos($path, '/install') === 0) {
                     return true;
                 }
+
+                // IPN thanh toán
                 if ($path === '/member/campaigns/ipn') {
                     return true;
                 }
+
+                // Các endpoint Links sử dụng AJAX / redirect token,
+                // không cần CSRF để tránh lỗi khi dùng từ domain/subdomain khác.
+                if (preg_match('#^/links/(go|popad|shorten|code|landing|r|finalAd)$#i', $path)) {
+                    return true;
+                }
+
                 return false;
             }));
 
