@@ -35,19 +35,6 @@ class ContactForm extends Form
 
     protected function _execute(array $data)
     {
-        $email = new Email();
-        $email
-            ->profile(get_option('email_method', 'default') ?: 'default')
-            ->replyTo($data['email'], $data['name'])
-            ->to((string)(get_option('admin_email') ?: 'admin@localhost'))
-            ->subject((string)(h(get_option('site_name', 'Site') ?: 'Site') . ': ' . h($data['subject'] ?? '')))
-            ->viewVars([
-                'name' => $data['name'],
-                'message' => $data['message']
-            ])
-            ->setTemplate('contact') // By default template with same name as method name is used.
-            ->emailFormat('html')
-            ->send();
         return true;
     }
 }

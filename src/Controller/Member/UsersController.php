@@ -194,59 +194,22 @@ class UsersController extends AppMemberController
         $this->set('user', $user);
     }
 
-    public function changeEmail($username = null, $key = null)
+    public function changeEmail()
     {
-        if (!$username && !$key) {
-            $user = $this->Users->findById($this->Auth->user('id'))->first();
+        $user = $this->Users->findById($this->Auth->user('id'))->first();
 
-            if ($this->request->is(['post', 'put'])) {
-                $uuid = \Cake\Utility\Text::uuid();
-
-                $user->activation_key = \Cake\Utility\Security::hash($uuid, 'sha1', true);
-
-                $user = $this->Users->patchEntity($user, $this->request->getData(), ['validate' => 'changEemail']);
-
-                if ($this->Users->save($user)) {
-                    // Send rest email
-                    $this->getMailer('User')->send('changeEmail', [$user]);
-
-                    $this->Flash->success(__('Kindly check your email to confirm it.'));
-
-                    $this->redirect(['action' => 'changeEmail']);
-                } else {
-                    $this->Flash->error(__('Oops! There are mistakes in the form. Please make the correction.'));
-                }
-            }
-            $this->set('user', $user);
-        } else {
-            $user = $this->Users->find('all')
-                ->where([
-                    'status' => 1,
-                    'username' => $username,
-                    'activation_key' => $key
-                ])
-                ->first();
-
-            if (!$user) {
-                $this->Flash->error(__('Invalid Activation.'));
-                return $this->redirect(['action' => 'changeEmail']);
-            }
-
-            $user->email = $user->temp_email;
-            $user->temp_email = '';
-            $user->activation_key = '';
+        if ($this->request->is(['post', 'put'])) {
+            $user = $this->Users->patchEntity($user, $this->request->getData(), ['validate' => 'changEemail']);
 
             if ($this->Users->save($user)) {
-                $this->Flash->success(__('Your email has been confirmed.'));
-
-                $this->Auth->logout();
-
-                return $this->redirect(['action' => 'signin', 'prefix' => 'Auth']);
+                $this->Flash->success(__('Email has been updated'));
+                $this->redirect(['action' => 'changeEmail']);
             } else {
-                $this->Flash->error(__('Unable to confirm your email.'));
-                return $this->redirect(['action' => 'changeEmail']);
+                $this->Flash->error(__('Oops! There are mistakes in the form. Please make the correction.'));
             }
         }
+        unset($user->password);
+        $this->set('user', $user);
     }
 
     public function changePassword()

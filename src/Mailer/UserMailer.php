@@ -15,53 +15,50 @@ class UserMailer extends Mailer
     {
         $emailConfig = get_option('email_method', 'default') ?: 'default';
         
-        $this
-            ->setTransport($emailConfig)
-            ->from([(string)(get_option('email_from', 'no_reply@localhost') ?: 'no_reply@localhost') => (string)(get_option('site_name', 'Site') ?: 'Site')])
-            ->to((string)($user->email ?? ''))
-            ->subject((string)(__("{0}: New Account", h(get_option('site_name', 'Site') ?: 'Site'))))
-            ->viewVars([
-                'username' => $user->username,
-                'activation_key' => $user->activation_key
-            ])
-            ->setTemplate('register')
-            ->setLayout('app')
-            ->emailFormat('html');
+        $this->setTransport($emailConfig);
+        $this->setFrom([(string)(get_option('email_from', 'no_reply@localhost') ?: 'no_reply@localhost') => (string)(get_option('site_name', 'Site') ?: 'Site')]);
+        $this->setTo((string)($user->email ?? ''));
+        $this->setSubject((string)(__("{0}: New Account", h(get_option('site_name', 'Site') ?: 'Site'))));
+        $this->setViewVars([
+            'username' => $user->username,
+            'activation_key' => $user->activation_key
+        ]);
+        $this->viewBuilder()->setTemplate('register');
+        $this->viewBuilder()->setLayout('app');
+        $this->setEmailFormat('html');
     }
 
     public function changeEmail($user)
     {
         $emailConfig = get_option('email_method', 'default') ?: 'default';
         
-        $this
-            ->setTransport($emailConfig)
-            ->from([(string)(get_option('email_from', 'no_reply@localhost') ?: 'no_reply@localhost') => (string)(get_option('site_name', 'Site') ?: 'Site')])
-            ->to((string)($user->temp_email ?? ''))
-            ->subject((string)(__("{0}: Change Email", h(get_option('site_name', 'Site') ?: 'Site'))))
-            ->viewVars([
-                'username' => $user->username,
-                'activation_key' => $user->activation_key
-            ])
-            ->setTemplate('change_email')
-            ->setLayout('app')
-            ->emailFormat('html');
+        $this->setTransport($emailConfig);
+        $this->setFrom([(string)(get_option('email_from', 'no_reply@localhost') ?: 'no_reply@localhost') => (string)(get_option('site_name', 'Site') ?: 'Site')]);
+        $this->setTo((string)($user->temp_email ?? ''));
+        $this->setSubject((string)(__("{0}: Change Email", h(get_option('site_name', 'Site') ?: 'Site'))));
+        $this->setViewVars([
+            'username' => $user->username,
+            'activation_key' => $user->activation_key
+        ]);
+        $this->viewBuilder()->setTemplate('change_email');
+        $this->viewBuilder()->setLayout('app');
+        $this->setEmailFormat('html');
     }
 
     public function forgotPassword($user)
     {
         $emailConfig = get_option('email_method', 'default') ?: 'default';
         
-        $this
-            ->setTransport($emailConfig)
-            ->from([(string)(get_option('email_from', 'no_reply@localhost') ?: 'no_reply@localhost') => (string)(get_option('site_name', 'Site') ?: 'Site')])
-            ->to((string)($user->email ?? ''))
-            ->subject((string)(__("{0}: Password Reset", h(get_option('site_name', 'Site') ?: 'Site'))))
-            ->viewVars([
-                'username' => $user->username,
-                'activation_key' => $user->activation_key
-            ])
-            ->setTemplate('reset_password')
-            ->setLayout('app')
-            ->emailFormat('html');
+        $this->setTransport($emailConfig);
+        $this->setFrom([(string)(get_option('email_from', 'no_reply@localhost') ?: 'no_reply@localhost') => (string)(get_option('site_name', 'Site') ?: 'Site')]);
+        $this->setTo((string)($user->email ?? ''));
+        $this->setSubject((string)(__("{0}: Password Reset", h(get_option('site_name', 'Site') ?: 'Site'))));
+        $this->setViewVars([
+            'username' => $user->username,
+            'activation_key' => $user->activation_key
+        ]);
+        $this->viewBuilder()->setTemplate('reset_password');
+        $this->viewBuilder()->setLayout('app');
+        $this->setEmailFormat('html');
     }
 }

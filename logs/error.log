@@ -11299,3 +11299,119 @@ Stack Trace:
 
 Request URL: /landing/Hm46lE9h
 Referer URL: http://localhost:8765/Hm46lE9h
+2026-03-05 12:02:46 error: [Error] Call to undefined method Cake\Mailer\Message::viewVars() in E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Mailer\Mailer.php on line 294
+Stack Trace:
+- E:\rut gon link\rut_gon_link\src\Mailer\UserMailer.php:23
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Mailer\Mailer.php:368
+- E:\rut gon link\rut_gon_link\src\Controller\Auth\UsersController.php:110
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\Controller.php:560
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:140
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:115
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\BaseApplication.php:325
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:86
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Middleware\CsrfProtectionMiddleware.php:176
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Middleware\BodyParserMiddleware.php:162
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\admad\cakephp-social-auth\src\Middleware\SocialAuthMiddleware.php:221
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php:189
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php:68
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php:149
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:67
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Server.php:99
+- E:\rut gon link\rut_gon_link\webroot\index.php:60
+- [main]:
+
+Request URL: /auth/signup
+Referer URL: http://localhost:8765/auth/signup
+2026-03-05 12:07:17 error: [Error] Call to undefined method Cake\Mailer\Message::viewVars() in E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Mailer\Mailer.php on line 294
+Stack Trace:
+- E:\rut gon link\rut_gon_link\src\Mailer\UserMailer.php:23
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Mailer\Mailer.php:368
+- E:\rut gon link\rut_gon_link\src\Controller\Auth\UsersController.php:110
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\Controller.php:560
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:140
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:115
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\BaseApplication.php:325
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:86
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Middleware\CsrfProtectionMiddleware.php:176
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Middleware\BodyParserMiddleware.php:162
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\admad\cakephp-social-auth\src\Middleware\SocialAuthMiddleware.php:221
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php:189
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php:68
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php:149
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:67
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Server.php:99
+- E:\rut gon link\rut_gon_link\webroot\index.php:60
+- [main]:
+
+Request URL: /auth/signup
+Referer URL: http://localhost:8765/auth/signup
+2026-03-05 12:14:24 error: [Error] Call to undefined method Cake\Mailer\Message::setTemplate() in E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Mailer\Mailer.php on line 294
+Stack Trace:
+- E:\rut gon link\rut_gon_link\src\Mailer\UserMailer.php:27
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Mailer\Mailer.php:368
+- E:\rut gon link\rut_gon_link\src\Controller\Auth\UsersController.php:110
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\Controller.php:560
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:140
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:115
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\BaseApplication.php:325
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:86
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Middleware\CsrfProtectionMiddleware.php:176
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Middleware\BodyParserMiddleware.php:162
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\admad\cakephp-social-auth\src\Middleware\SocialAuthMiddleware.php:221
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php:189
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php:68
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php:149
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:67
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Server.php:99
+- E:\rut gon link\rut_gon_link\webroot\index.php:60
+- [main]:
+
+Request URL: /auth/signup
+Referer URL: http://localhost:8765/auth/signup
+2026-03-05 12:19:51 error: [Error] Call to undefined method App\Mailer\Transport\SafeMailTransport::_headersToString() in E:\rut gon link\rut_gon_link\src\Mailer\Transport\SafeMailTransport.php on line 30
+Stack Trace:
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Mailer\Mailer.php:407
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Mailer\Mailer.php:370
+- E:\rut gon link\rut_gon_link\src\Controller\Auth\UsersController.php:110
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\Controller.php:560
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:140
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:115
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\BaseApplication.php:325
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:86
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Middleware\CsrfProtectionMiddleware.php:176
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Middleware\BodyParserMiddleware.php:162
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\admad\cakephp-social-auth\src\Middleware\SocialAuthMiddleware.php:221
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php:189
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php:68
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php:149
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Runner.php:67
+- E:\rut gon link\rut_gon_link\vendor\cakephp\cakephp\src\Http\Server.php:99
+- E:\rut gon link\rut_gon_link\webroot\index.php:60
+- [main]:
+
+Request URL: /auth/signup
+Referer URL: http://localhost:8765/auth/signup

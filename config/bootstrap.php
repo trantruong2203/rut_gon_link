@@ -123,15 +123,6 @@ unset($fullBaseUrl);
 Cache::setConfig(Configure::consume('Cache'));
 ConnectionManager::setConfig(Configure::consume('Datasources'));
 
-// SafeMailTransport for PHP 8.x compatibility
-$emailTransport = Configure::consume('EmailTransport');
-$mailClasses = ['Mail', \Cake\Mailer\Transport\MailTransport::class];
-foreach ($emailTransport as $name => $config) {
-    if (is_array($config) && isset($config['className']) && in_array($config['className'], $mailClasses, true)) {
-        $emailTransport[$name]['className'] = \App\Mailer\Transport\SafeMailTransport::class;
-    }
-}
-TransportFactory::setConfig($emailTransport);
 Mailer::setConfig(Configure::consume('Email'));
 Log::setConfig(Configure::consume('Log'));
 Security::setSalt(Configure::consume('Security.salt'));

@@ -94,31 +94,13 @@ class UsersController extends AppController
             $user->referred_by = $referred_by_id;
 
             $user->api_token = \Cake\Utility\Security::hash(\Cake\Utility\Text::uuid(), 'sha1', true);
-            $user->activation_key = \Cake\Utility\Security::hash(\Cake\Utility\Text::uuid(), 'sha1', true);
+            $user->activation_key = '';
 
             $user->role = 'member';
             $user->status = 1;
 
-            if (get_option('account_activate_email', 'yes') == 'yes') {
-                $user->status = 2;
-            }
-
             if ($this->Users->save($user)) {
-
-                if (get_option('account_activate_email', 'yes') == 'yes') {
-                    try {
-                        $this->getMailer('User')->send('activation', [$user]);
-                        $this->Flash->success(__('Your account has been created. Please check your email inbox to activate your account.'));
-                    } catch (\Exception $e) {
-                        // Email failed (e.g. no SMTP on Windows) - activate immediately so user can login
-                        $user->status = 1;
-                        $user->activation_key = '';
-                        $this->Users->save($user);
-                        $this->Flash->success(__('Your account has been created. Activation email could not be sent - you can sign in now.'));
-                    }
-                } else {
-                    $this->Flash->success(__('Your account has been created.'));
-                }
+                $this->Flash->success(__('Your account has been created.'));
                 return $this->redirect(['action' => 'signin']);
             }
             $this->Flash->error(__('Unable to add the user.'));
@@ -191,12 +173,8 @@ class UsersController extends AppController
                 $user = $this->Users->patchEntity($user, $this->request->getData(), ['validate' => 'forgotPassword']);
 
                 if ($this->Users->save($user)) {
-                    // Send rest email
-                    $this->getMailer('User')->send('forgotPassword', [$user]);
-
-                    $this->Flash->success(__('Kindly check your email for reset password link.'));
-
-                    return $this->redirect(['action' => 'forgotPassword', 'prefix' => 'Auth']);
+                    $this->Flash->success(__('Your password has been changed.'));
+                    return $this->redirect(['action' => 'signin', 'prefix' => 'Auth']);
                 } else {
                     $this->Flash->error(__('Unable to reset password.'));
 
