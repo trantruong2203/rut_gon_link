@@ -27,8 +27,20 @@ $campaign_image_1 = ($campaign && !empty($campaign->image_1)) ? $this->Url->buil
 $campaign_image_2 = ($campaign && !empty($campaign->image_2)) ? $this->Url->build('/' . $campaign->image_2, ['fullBase' => true]) : null;
 $video_url = trim((string) get_option('interstitial_video_url', ''));
 $report_url = trim((string) get_option('interstitial_report_error_url', ''));
+$site_name = get_option('site_name', 'MONEYLINK');
+$brand_subtitle = get_option('interstitial_brand_subtitle', '') ?: 'PICKI';
 ?>
 <div class="myTestAd" style="height: 5px; width: 5px; position: absolute;"></div>
+<!-- Header bar: MONEYLINK / PICKI (left), ENTER CODE TO CONTINUE (right) -->
+<div class="interstitial-header-bar" style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.06\'%3E%3Ccircle cx=\'30\' cy=\'30\' r=\'2\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E'); padding: 18px 25px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+    <div style="color: #fff;">
+        <div style="font-size: 22px; font-weight: 700; letter-spacing: 0.5px;"><?= h($site_name) ?></div>
+        <?php if ($brand_subtitle !== '') : ?>
+        <div style="font-size: 14px; opacity: 0.95; margin-top: 2px;"><?= h($brand_subtitle) ?></div>
+        <?php endif; ?>
+    </div>
+    <div style="color: #fff; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;"><?= __('ENTER CODE TO CONTINUE') ?></div>
+</div>
 <div class="container" style="padding: 20px 0;">
     <?php if (!empty($link->title) || !empty($link->description)) : ?>
     <div class="row"><div class="col-md-10 col-md-offset-1"><div style="margin-bottom: 25px;">

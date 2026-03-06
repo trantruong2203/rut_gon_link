@@ -65,11 +65,15 @@
             app_vars['copied'] = '<?= __("Copied!"); ?>';
             app_vars['user_id'] = '<?= $this->request->getSession()->read('Auth.User.id'); ?>';
             app_vars['home_shortening_register'] = '<?= ( get_option('home_shortening_register') == 'yes' ) ? 'yes' : 'no' ?>';
+            app_vars['reCAPTCHA_site_key'] = '<?= get_option('reCAPTCHA_site_key', '') ?>';
             /* ]]> */
         </script>
         <!-- Custom Theme JavaScript -->
         <?= $this->Html->script('front'); ?>
         <?= $this->Html->script('app.js?ver=' . APP_VERSION); ?>
+        <?= $this->element('js_vars'); ?>
+
+        <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit&hl=<?= locale_get_primary_language(null) ?>" async defer></script>
 
         <?= $this->fetch('scriptBottom') ?>
         <?= get_option('footer_code'); ?>

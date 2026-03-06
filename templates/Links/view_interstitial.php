@@ -165,7 +165,7 @@ body { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height
             <h4><i class="fa fa-info-circle"></i> <?= h($instruction_header) ?></h4>
             
             <div class="warning-box">
-                <strong><i class="fa fa-exclamationclamation"></i> LƯU Ý QUAN TRỌNG:</strong>
+                <strong><i class="fa fa-exclamation-triangle"></i> LƯU Ý QUAN TRỌNG:</strong>
                 Vui lòng làm theo đúng hướng dẫn để không bị SAI MÃ. Sử dụng trình duyệt Chrome để tránh lỗi.
             </div>
 

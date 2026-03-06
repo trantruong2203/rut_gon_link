@@ -701,6 +701,9 @@ msgstr "Mã này sẽ hết hạn khi phiên của bạn kết thúc."
 msgid "PLEASE ENTER CODE TO CONTINUE TO DESTINATION PAGE"
 msgstr "VUI LÒNG NHẬP MÃ ĐỂ TIẾP TỤC ĐẾN TRANG ĐÍCH"
 
+msgid "ENTER CODE TO CONTINUE"
+msgstr "NHẬP MÃ ĐỂ TIẾP TỤC"
+
 msgid "Enter code"
 msgstr "Nhập mã"
 
