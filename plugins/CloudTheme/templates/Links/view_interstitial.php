@@ -6,7 +6,8 @@ $this->assign('og_title', $link->title);
 $this->assign('og_description', $link->description);
 $this->assign('og_image', $link->image);
 
-$show_recaptcha = (get_option('interstitial_recaptcha', 'yes') == 'yes') && isset_recaptcha();
+// Force captcha to always show for interstitial
+$show_recaptcha = true;
 $session_time = isset($session_time) ? (int) $session_time : 600;
 $landing_url = $this->Url->build('/landing/' . $link->alias, ['fullBase' => true]);
 
@@ -58,7 +59,30 @@ $brand_subtitle = get_option('interstitial_brand_subtitle', '') ?: 'PICKI';
         <?= $this->Form->hidden('cii', ['value' => $campaign_item->id]); ?>
         <?= $this->Form->hidden('ref', ['value' => strtolower(env('HTTP_REFERER'))]); ?>
         <div class="form-group"><?= $this->Form->input('code', ['label' => false, 'type' => 'text', 'placeholder' => 'NHẬP MÃ', 'class' => 'form-control input-lg', 'id' => 'code-input', 'style' => 'text-transform: uppercase; letter-spacing: 2px; max-width: 300px;', 'maxlength' => 10, 'autocomplete' => 'off']); ?></div>
-        <?php if ($show_recaptcha) : ?><?php $this->Form->unlockField('g-recaptcha-response'); ?><div class="form-group"><p class="text-muted" style="margin-bottom: 10px;"><?= __('Please complete the captcha to enable the continue button.') ?></p><div id="captchaInterstitial" style="display: inline-block;"></div></div><?php endif; ?>
+        <?php if ($show_recaptcha) : ?>
+            <?php $this->Form->unlockField('g-recaptcha-response'); ?>
+            <div class="form-group">
+                <p class="text-muted" style="margin-bottom: 10px;"><?= __('Please complete the captcha to enable the continue button.') ?></p>
+                <div
+                    class="g-recaptcha"
+                    data-sitekey="<?= h(get_option('reCAPTCHA_site_key')) ?>"
+                    data-callback="onInterstitialCaptchaOk"
+                    data-expired-callback="onInterstitialCaptchaExpired"
+                ></div>
+            </div>
+            <script>
+                window.onInterstitialCaptchaOk = function () {
+                    if (window.jQuery) {
+                        jQuery('#go-submit, #go-submit-2').prop('disabled', false).removeClass('disabled');
+                    }
+                };
+                window.onInterstitialCaptchaExpired = function () {
+                    if (window.jQuery) {
+                        jQuery('#go-submit, #go-submit-2').prop('disabled', true).addClass('disabled');
+                    }
+                };
+            </script>
+        <?php endif; ?>
         <div class="form-group" id="session-timer-wrap" style="font-size: 14px; color: #666;">Thời gian phiên còn lại: <span id="timer-display"><?= $session_time ?></span></div>
         <?= $this->Form->button('Nhấn vào đây để tiếp tục', ['id' => 'go-submit', 'class' => 'btn btn-success btn-lg', 'type' => 'submit', 'disabled' => $show_recaptcha]); ?>
         <?= $this->Form->end(); ?>
@@ -112,6 +136,6 @@ $(window).on('load', function () { $(document).one("click", function (e) { if (!
 $(document).ready(function () { window.setTimeout(function(){var t=$('.myTestAd');document.cookie="adblockUser=0; expires=<?= date('D, d M Y H:i:s', time()+86400) ?> GMT";(t.filter(':visible').length===0||t.filter(':hidden').length>0||t.height()===0)&&(document.cookie="adblockUser=1; expires=<?= date('D, d M Y H:i:s', time()+86400) ?> GMT");},1500); var $code1=$('#code-input'),$code2=$('#code-input-2'); $code1.on('input',function(){this.value=this.value.toUpperCase();$code2.val(this.value);}); $code2.on('input',function(){this.value=this.value.toUpperCase();$code1.val(this.value);}); var st=<?= $session_time ?>,ti=setInterval(function(){st--;$('#timer-display').text(st);if(st<=0){clearInterval(ti);$('#session-timer-wrap').html('<?= addslashes(__('Session expired. Please refresh the page.')) ?>');$('#go-submit').prop('disabled',true);$('#go-submit-2').prop('disabled',true);}},1000); $('#go-submit-2').on('click',function(){$('#go-link').submit();}); });
 $("#go-link").on("submit",function(e){e.preventDefault();var f=$(this),b=f.find('#go-submit'),b2=$('#go-submit-2'),c=f.find('#code-input');if(!$.trim(c.val())){alert('<?= addslashes(__('Please enter the code.')) ?>');return;}
 <?php if ($show_recaptcha) : ?>if(!$.trim($('textarea[name="g-recaptcha-response"]').val())){alert('<?= addslashes(__('Please complete the reCAPTCHA verification.')) ?>');return;}
-<?php endif; ?>b.prop('disabled',true);b2.prop('disabled',true);b.text('<?= addslashes(__('Checking...')) ?>');b2.text('<?= addslashes(__('Checking...')) ?>');$.ajax({dataType:'json',type:'POST',url:f.attr('action'),data:f.serialize(),success:function(r){if(r.url){var siteHost='<?= addslashes(parse_url($this->Url->build("/", ['fullBase' => true]), PHP_URL_HOST) ?: "") ?>';var ref=(document.referrer||'').toLowerCase();var ok=!ref||!siteHost||ref.indexOf(siteHost)!==-1;if(!ok){alert('<?= addslashes(__('Invalid referrer. Please use the link from our site.')) ?>');b.prop('disabled',false);b2.prop('disabled',false);b.text('Nhấn vào đây để tiếp tục');b2.text('Nhấn vào đây để tiếp tục');return;}var dMin=<?= (int)get_option('anti_bypass_redirect_delay_min', 2) ?>;var dMax=<?= (int)get_option('anti_bypass_redirect_delay_max', 5) ?>;var delay=Math.floor(Math.random()*(dMax-dMin+1)+dMin)*1000;setTimeout(function(){window.location.href=r.url;},delay);}else{alert(r.message||'<?= addslashes(__('Invalid code. Please try again.')) ?>');b.prop('disabled',false);b2.prop('disabled',false);b.text('Nhấn vào đây để tiếp tục');b2.text('Nhấn vào đây để tiếp tục');<?php if ($show_recaptcha) : ?>if(typeof grecaptcha!=='undefined'&&typeof captchaInterstitial!=='undefined'){grecaptcha.reset(captchaInterstitial);b.prop('disabled',true);b2.prop('disabled',true);}<?php endif; ?>}},error:function(){alert("<?= addslashes(__('An error occurred. Please try again.')) ?>");b.prop('disabled',false);b2.prop('disabled',false);b.text('Nhấn vào đây để tiếp tục');b2.text('Nhấn vào đây để tiếp tục');<?php if ($show_recaptcha) : ?>if(typeof grecaptcha!=='undefined'&&typeof captchaInterstitial!=='undefined'){grecaptcha.reset(captchaInterstitial);b.prop('disabled',true);b2.prop('disabled',true);}<?php endif; ?>}});});
+<?php endif; ?>b.prop('disabled',true);b2.prop('disabled',true);b.text('<?= addslashes(__('Checking...')) ?>');b2.text('<?= addslashes(__('Checking...')) ?>');$.ajax({dataType:'json',type:'POST',url:f.attr('action'),data:f.serialize(),success:function(r){if(r.url){var siteHost='<?= addslashes(parse_url($this->Url->build("/", ['fullBase' => true]), PHP_URL_HOST) ?: "") ?>';var ref=(document.referrer||'').toLowerCase();var ok=!ref||!siteHost||ref.indexOf(siteHost)!==-1;if(!ok){alert('<?= addslashes(__('Invalid referrer. Please use the link from our site.')) ?>');b.prop('disabled',false);b2.prop('disabled',false);b.text('Nhấn vào đây để tiếp tục');b2.text('Nhấn vào đây để tiếp tục');return;}var dMin=<?= (int)get_option('anti_bypass_redirect_delay_min', 2) ?>;var dMax=<?= (int)get_option('anti_bypass_redirect_delay_max', 5) ?>;var delay=Math.floor(Math.random()*(dMax-dMin+1)+dMin)*1000;setTimeout(function(){window.location.href=r.url;},delay);}else{alert(r.message||'<?= addslashes(__('Invalid code. Please try again.')) ?>');b.prop('disabled',false);b2.prop('disabled',false);b.text('Nhấn vào đây để tiếp tục');b2.text('Nhấn vào đây để tiếp tục');<?php if ($show_recaptcha) : ?>if(typeof grecaptcha!=='undefined'){grecaptcha.reset();b.prop('disabled',true);b2.prop('disabled',true);}<?php endif; ?>}},error:function(){alert("<?= addslashes(__('An error occurred. Please try again.')) ?>");b.prop('disabled',false);b2.prop('disabled',false);b.text('Nhấn vào đây để tiếp tục');b2.text('Nhấn vào đây để tiếp tục');<?php if ($show_recaptcha) : ?>if(typeof grecaptcha!=='undefined'){grecaptcha.reset();b.prop('disabled',true);b2.prop('disabled',true);}<?php endif; ?>}});});
 </script>
 <?php $this->end(); ?>

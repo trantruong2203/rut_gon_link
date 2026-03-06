@@ -756,17 +756,15 @@ class LinksController extends FrontController
                     return $this->response;
                 }
 
-                // Verify reCAPTCHA if enabled
-                if (get_option('interstitial_recaptcha', 'yes') == 'yes' && isset_recaptcha()) {
-                    if (empty($this->request->getData('g-recaptcha-response')) || !$this->Recaptcha->verify($this->request->getData('g-recaptcha-response'))) {
-                        $content = [
-                            'status' => 'error',
-                            'message' => __('Please complete the reCAPTCHA verification.'),
-                            'url' => ''
-                        ];
-                        $this->response = $this->response->withStringBody(json_encode($content));
-                        return $this->response;
-                    }
+                // Verify reCAPTCHA - always required for interstitial
+                if (empty($this->request->getData('g-recaptcha-response')) || !$this->Recaptcha->verify($this->request->getData('g-recaptcha-response'))) {
+                    $content = [
+                        'status' => 'error',
+                        'message' => __('Please complete the reCAPTCHA verification.'),
+                        'url' => ''
+                    ];
+                    $this->response = $this->response->withStringBody(json_encode($content));
+                    return $this->response;
                 }
 
                 $codeFromRequest = $this->request->getData('code');

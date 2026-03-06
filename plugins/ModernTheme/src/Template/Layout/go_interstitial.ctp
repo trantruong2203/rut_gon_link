@@ -73,7 +73,7 @@
         <?= $this->Html->script('app.js?ver=' . APP_VERSION); ?>
         <?= $this->element('js_vars'); ?>
 
-        <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit&hl=<?= locale_get_primary_language(null) ?>" async defer></script>
+        <script src="https://www.google.com/recaptcha/api.js?hl=<?= locale_get_primary_language(null) ?>" async defer></script>
 
         <?= $this->fetch('scriptBottom') ?>
         <?= get_option('footer_code'); ?>

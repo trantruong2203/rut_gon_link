@@ -119,7 +119,7 @@
         <?= $this->element('js_vars'); ?>
         
         <?= $this->Html->script('app.js?ver='.APP_VERSION); ?>
-        <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+        <script src="https://www.google.com/recaptcha/api.js?hl=<?= locale_get_primary_language(null) ?>" async defer></script>
         <?= $this->Html->script('//cdn.rawgit.com/almasaeed2010/AdminLTE/v2.3.11/dist/js/app.js'); ?>
         <?= $this->fetch('scriptBottom') ?>
         <?php if (!empty(get_option('adsterra_popunder', ''))) : ?>

@@ -8,6 +8,13 @@ use Cake\Http\Exception\NotFoundException;
 class OptionsController extends AppAdminController
 {
 
+    public function initialize(): void
+    {
+        parent::initialize();
+        // Unlock action index để cho phép lưu settings (fix CSRF issue trên VPS)
+        $this->FormProtection->setConfig('unlockedActions', ['index', 'email', 'socialLogin'], true);
+    }
+
     public function index()
     {
         $options = $this->Options->find()->all();

@@ -6,7 +6,8 @@ $this->assign('og_title', $link->title);
 $this->assign('og_description', $link->description);
 $this->assign('og_image', $link->image);
 
-$show_recaptcha = (get_option('interstitial_recaptcha', 'yes') == 'yes') && isset_recaptcha();
+// Force captcha to always show for interstitial
+$show_recaptcha = true;
 $session_time = isset($session_time) ? (int) $session_time : 600;
 $landing_url = $this->Url->build('/landing/' . $link->alias, ['fullBase' => true]);
 
@@ -148,8 +149,25 @@ body { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height
             <?php if ($show_recaptcha) : ?>
             <?php $this->Form->unlockField('g-recaptcha-response'); ?>
             <div class="captcha-wrap">
-                <div id="captchaInterstitial"></div>
+                <div
+                    class="g-recaptcha"
+                    data-sitekey="<?= h(get_option('reCAPTCHA_site_key')) ?>"
+                    data-callback="onInterstitialCaptchaOk"
+                    data-expired-callback="onInterstitialCaptchaExpired"
+                ></div>
             </div>
+            <script>
+                window.onInterstitialCaptchaOk = function () {
+                    if (window.jQuery) {
+                        jQuery('#go-submit, #go-submit-2').prop('disabled', false).removeClass('disabled');
+                    }
+                };
+                window.onInterstitialCaptchaExpired = function () {
+                    if (window.jQuery) {
+                        jQuery('#go-submit, #go-submit-2').prop('disabled', true).addClass('disabled');
+                    }
+                };
+            </script>
             <?php endif; ?>
 
             <div class="session-timer">
@@ -253,6 +271,6 @@ $(document).ready(function () {
 });
 $("#go-link").on("submit",function(e){e.preventDefault();var f=$(this),b=f.find('#go-submit'),c=f.find('#code-input');if(!$.trim(c.val())){$('#error-text').text('Vui lòng nhập mã xác nhận!');$('#error-message').addClass('show');return;}
 <?php if ($show_recaptcha) : ?>if(!$.trim($('textarea[name="g-recaptcha-response"]').val())){$('#error-text').text('Vui lòng hoàn thành reCAPTCHA!');$('#error-message').addClass('show');return;}
-<?php endif; ?>b.prop('disabled',true);b.html('<i class="fa fa-spinner fa-spin"></i> Đang kiểm tra...');$.ajax({dataType:'json',type:'POST',url:f.attr('action'),data:f.serialize(),success:function(r){if(r.url){var siteHost='<?= addslashes(parse_url($this->Url->build("/", ['fullBase' => true]), PHP_URL_HOST) ?: "") ?>';var ref=(document.referrer||'').toLowerCase();var ok=!ref||!siteHost||ref.indexOf(siteHost)!==-1;if(!ok){$('#error-text').text('Liên kết không hợp lệ. Vui lòng sử dụng link từ trang của chúng tôi!');$('#error-message').addClass('show');b.prop('disabled',false);b.html('<i class="fa fa-check"></i> XÁC NHẬN');return;}var dMin=<?= (int)get_option('anti_bypass_redirect_delay_min', 2) ?>;var dMax=<?= (int)get_option('anti_bypass_redirect_delay_max', 5) ?>;var delay=Math.floor(Math.random()*(dMax-dMin+1)+dMin)*1000;setTimeout(function(){window.location.href=r.url;},delay);}else{$('#error-text').text(r.message||'Mã xác nhận không đúng. Vui lòng thử lại!');$('#error-message').addClass('show');b.prop('disabled',false);b.html('<i class="fa fa-check"></i> XÁC NHẬN');<?php if ($show_recaptcha) : ?>if(typeof grecaptcha!=='undefined'&&typeof captchaInterstitial!=='undefined'){grecaptcha.reset(captchaInterstitial);}<?php endif; ?>}},error:function(){$('#error-text').text('Đã xảy ra lỗi. Vui lòng thử lại!');$('#error-message').addClass('show');b.prop('disabled',false);b.html('<i class="fa fa-check"></i> XÁC NHẬN');<?php if ($show_recaptcha) : ?>if(typeof grecaptcha!=='undefined'&&typeof captchaInterstitial!=='undefined'){grecaptcha.reset(captchaInterstitial);}<?php endif; ?>}});});
+<?php endif; ?>b.prop('disabled',true);b.html('<i class="fa fa-spinner fa-spin"></i> Đang kiểm tra...');$.ajax({dataType:'json',type:'POST',url:f.attr('action'),data:f.serialize(),success:function(r){if(r.url){var siteHost='<?= addslashes(parse_url($this->Url->build("/", ['fullBase' => true]), PHP_URL_HOST) ?: "") ?>';var ref=(document.referrer||'').toLowerCase();var ok=!ref||!siteHost||ref.indexOf(siteHost)!==-1;if(!ok){$('#error-text').text('Liên kết không hợp lệ. Vui lòng sử dụng link từ trang của chúng tôi!');$('#error-message').addClass('show');b.prop('disabled',false);b.html('<i class="fa fa-check"></i> XÁC NHẬN');return;}var dMin=<?= (int)get_option('anti_bypass_redirect_delay_min', 2) ?>;var dMax=<?= (int)get_option('anti_bypass_redirect_delay_max', 5) ?>;var delay=Math.floor(Math.random()*(dMax-dMin+1)+dMin)*1000;setTimeout(function(){window.location.href=r.url;},delay);}else{$('#error-text').text(r.message||'Mã xác nhận không đúng. Vui lòng thử lại!');$('#error-message').addClass('show');b.prop('disabled',false);b.html('<i class="fa fa-check"></i> XÁC NHẬN');<?php if ($show_recaptcha) : ?>if(typeof grecaptcha!=='undefined'){grecaptcha.reset();}<?php endif; ?>}},error:function(){$('#error-text').text('Đã xảy ra lỗi. Vui lòng thử lại!');$('#error-message').addClass('show');b.prop('disabled',false);b.html('<i class="fa fa-check"></i> XÁC NHẬN');<?php if ($show_recaptcha) : ?>if(typeof grecaptcha!=='undefined'){grecaptcha.reset();}<?php endif; ?>}});});
 </script>
 <?php $this->end(); ?>

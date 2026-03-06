@@ -5,7 +5,8 @@ $this->assign('og_title', $link->title);
 $this->assign('og_description', $link->description);
 $this->assign('og_image', $link->image);
 
-$show_recaptcha = (get_option('interstitial_recaptcha', 'yes') == 'yes') && isset_recaptcha();
+// Force captcha to always show for interstitial
+$show_recaptcha = true;
 $session_time = isset($session_time) ? (int) $session_time : 600;
 $landing_url = $this->Url->build('/landing/' . $link->alias, ['fullBase' => true]);
 
@@ -35,7 +36,30 @@ $wait_seconds = (int) get_option('landing_wait_seconds', 60);
         <?= $this->Form->hidden('cii', ['value' => $campaign_item->id]); ?>
         <?= $this->Form->hidden('ref', ['value' => strtolower(env('HTTP_REFERER'))]); ?>
         <div class="form-group"><?= $this->Form->input('code', ['label' => false, 'type' => 'text', 'placeholder' => __('Enter code'), 'class' => 'form-control input-lg', 'id' => 'code-input', 'style' => 'text-transform: uppercase; letter-spacing: 2px; max-width: 300px;', 'maxlength' => 10, 'autocomplete' => 'off']); ?></div>
-        <?php if ($show_recaptcha) : ?><?php $this->Form->unlockField('g-recaptcha-response'); ?><div class="form-group"><p class="text-muted" style="margin-bottom: 10px;"><?= __('Please complete the captcha to enable the continue button.') ?></p><div id="captchaInterstitial" style="display: inline-block;"></div></div><?php endif; ?>
+        <?php if ($show_recaptcha) : ?>
+            <?php $this->Form->unlockField('g-recaptcha-response'); ?>
+            <div class="form-group">
+                <p class="text-muted" style="margin-bottom: 10px;"><?= __('Please complete the captcha to enable the continue button.') ?></p>
+                <div
+                    class="g-recaptcha"
+                    data-sitekey="<?= h(get_option('reCAPTCHA_site_key')) ?>"
+                    data-callback="onInterstitialCaptchaOk"
+                    data-expired-callback="onInterstitialCaptchaExpired"
+                ></div>
+            </div>
+            <script>
+                window.onInterstitialCaptchaOk = function () {
+                    if (window.jQuery) {
+                        jQuery('#go-submit, #go-submit-2').prop('disabled', false).removeClass('disabled');
+                    }
+                };
+                window.onInterstitialCaptchaExpired = function () {
+                    if (window.jQuery) {
+                        jQuery('#go-submit, #go-submit-2').prop('disabled', true).addClass('disabled');
+                    }
+                };
+            </script>
+        <?php endif; ?>
         <div class="form-group"><div id="session-timer" class="text-danger" style="font-size: 16px; font-weight: bold;"><?= __('Session time remaining') ?>: <span id="timer-display"><?= $session_time ?></span></div></div>
         <?= $this->Form->button(__('Click here to continue'), ['id' => 'go-submit', 'class' => 'btn btn-success btn-lg', 'type' => 'submit', 'disabled' => $show_recaptcha]); ?>
         <?= $this->Form->end(); ?>
@@ -77,6 +101,6 @@ $(window).on('load', function () { $(document).one("click", function (e) { if (!
 $(document).ready(function () { window.setTimeout(function(){var t=$('.myTestAd');document.cookie="adblockUser=0; expires=<?= \Cake\I18n\Time::now()->modify('+1 day')->toCookieString() ?>";(t.filter(':visible').length===0||t.filter(':hidden').length>0||t.height()===0)&&(document.cookie="adblockUser=1; expires=<?= \Cake\I18n\Time::now()->modify('+1 day')->toCookieString() ?>");},1500); $('#code-input').on('input',function(){this.value=this.value.toUpperCase();}); var st=<?= $session_time ?>,ti=setInterval(function(){st--;$('#timer-display').text(st);if(st<=0){clearInterval(ti);$('#session-timer').html('<?= __('Session expired. Please refresh the page.') ?>');$('#go-submit').prop('disabled',true);}},1000); });
 $("#go-link").on("submit",function(e){e.preventDefault();var f=$(this),b=f.find('#go-submit'),c=f.find('#code-input');if(!$.trim(c.val())){alert('<?= __('Please enter the code.') ?>');return;}
 <?php if ($show_recaptcha) : ?>if(!$.trim($('textarea[name="g-recaptcha-response"]').val())){alert('<?= __('Please complete the reCAPTCHA verification.') ?>');return;}
-<?php endif; ?>b.prop('disabled',true).text('<?= __('Checking...') ?>');$.ajax({dataType:'json',type:'POST',url:f.attr('action'),data:f.serialize(),success:function(r){if(r.url)window.location.href=r.url;else{alert(r.message||'<?= __('Invalid code. Please try again.') ?>');b.prop('disabled',false).text('<?= __('Click here to continue') ?>');<?php if ($show_recaptcha) : ?>if(typeof grecaptcha!=='undefined'&&typeof captchaInterstitial!=='undefined'){grecaptcha.reset(captchaInterstitial);b.prop('disabled',true);}<?php endif; ?>}},error:function(){alert("<?= __('An error occurred. Please try again.') ?>");b.prop('disabled',false).text('<?= __('Click here to continue') ?>');<?php if ($show_recaptcha) : ?>if(typeof grecaptcha!=='undefined'&&typeof captchaInterstitial!=='undefined'){grecaptcha.reset(captchaInterstitial);b.prop('disabled',true);}<?php endif; ?>}});});
+<?php endif; ?>b.prop('disabled',true).text('<?= __('Checking...') ?>');$.ajax({dataType:'json',type:'POST',url:f.attr('action'),data:f.serialize(),success:function(r){if(r.url)window.location.href=r.url;else{alert(r.message||'<?= __('Invalid code. Please try again.') ?>');b.prop('disabled',false).text('<?= __('Click here to continue.') ?>');<?php if ($show_recaptcha) : ?>if(typeof grecaptcha!=='undefined'){grecaptcha.reset();b.prop('disabled',true);}<?php endif; ?>}},error:function(){alert("<?= __('An error occurred. Please try again.') ?>");b.prop('disabled',false).text('<?= __('Click here to continue') ?>');<?php if ($show_recaptcha) : ?>if(typeof grecaptcha!=='undefined'){grecaptcha.reset();b.prop('disabled',true);}<?php endif; ?>}});});
 </script>
 <?php $this->end(); ?>
