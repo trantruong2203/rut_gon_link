@@ -17,6 +17,7 @@
     <?= $this->fetch('content') ?>
     <?= $this->Html->script('//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js'); ?>
     <?= $this->Html->script('//cdn.rawgit.com/twbs/bootstrap/v3.3.7/dist/js/bootstrap.min.js'); ?>
+    <script src="https://www.google.com/recaptcha/api.js?hl=<?= locale_get_primary_language(null) ?>" async defer></script>
     <?= $this->fetch('scriptBottom') ?>
 </body>
 </html>

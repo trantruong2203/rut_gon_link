@@ -6,6 +6,9 @@ $landing_url = $this->Url->build('/landing/' . $link->alias, ['fullBase' => true
 $iframe_base = $campaign_item->campaign->website_url;
 $iframe_src = $iframe_base . (strpos($iframe_base, '?') !== false ? '&' : '?') . 'landing_url=' . urlencode($landing_url);
 $auto_start = $this->request->getQuery('action') === 'get_code';
+
+// Show captcha on landing page - user must complete captcha before getting code
+$show_recaptcha = true;
 ?>
 <div class="container" style="padding: 20px 0; max-width: 900px;">
     <div class="row">
@@ -13,6 +16,33 @@ $auto_start = $this->request->getQuery('action') === 'get_code';
             <div style="text-align: center; margin-bottom: 20px;">
                 <h2 style="font-weight: bold;"><?= h($landing_brand) ?></h2>
             </div>
+
+            <?php if ($show_recaptcha) : ?>
+                <div class="well" style="margin-bottom: 20px;">
+                    <div class="text-center">
+                        <p style="margin-bottom: 15px;"><?= __('Please complete the captcha below to enable the Get Code button') ?></p>
+                        <?php $this->Form->unlockField('g-recaptcha-response'); ?>
+                        <div
+                            class="g-recaptcha"
+                            data-sitekey="<?= h(get_option('reCAPTCHA_site_key')) ?>"
+                            data-callback="onLandingCaptchaOk"
+                            data-expired-callback="onLandingCaptchaExpired"
+                        ></div>
+                    </div>
+                </div>
+                <script>
+                    window.onLandingCaptchaOk = function () {
+                        if (window.jQuery) {
+                            jQuery('#btn-get-code').prop('disabled', false).removeClass('disabled');
+                        }
+                    };
+                    window.onLandingCaptchaExpired = function () {
+                        if (window.jQuery) {
+                            jQuery('#btn-get-code').prop('disabled', true).addClass('disabled');
+                        }
+                    };
+                </script>
+            <?php endif; ?>
 
             <iframe src="<?= h($iframe_src) ?>" style="width: 100%; height: 400px; border: 1px solid #ddd; border-radius: 4px;"></iframe>
 
@@ -26,7 +56,7 @@ $auto_start = $this->request->getQuery('action') === 'get_code';
             <div id="get-code-section" style="text-align: center; margin: 30px 0;"<?= $auto_start ? ' data-auto-start="1"' : '' ?>>
                 <p style="margin-bottom: 15px; color: #666;"><?= __('Please click the button below and wait for the code') ?></p>
                 <p class="text-muted small"><?= __('Or find the LẤY MÃ button on the website above and click it.') ?></p>
-                <button type="button" id="btn-get-code" class="btn btn-danger btn-lg" style="padding: 15px 40px; font-size: 18px;">
+                <button type="button" id="btn-get-code" class="btn btn-danger btn-lg" style="padding: 15px 40px; font-size: 18px;" <?= $show_recaptcha ? 'disabled' : '' ?>>
                     <?= __('LẤY MÃ') ?>
                 </button>
             </div>
@@ -59,6 +89,11 @@ $(document).ready(function () {
     var $btn = $('#btn-get-code');
     var $countdown = $('#wait-countdown');
     var $progress = $('#wait-progress');
+    
+    <?php if ($show_recaptcha) : ?>
+    // Disable button by default if captcha is required
+    $btn.prop('disabled', true).addClass('disabled');
+    <?php endif; ?>
 
     function startCountdown() {
         $getCodeSection.hide();
